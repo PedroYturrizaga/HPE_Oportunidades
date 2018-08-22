@@ -4,10 +4,10 @@
     	<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible"  content="IE=edge">
         <meta name="viewport"               content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-        <meta name="description"            content="Registro de Oportunidades DCN">
-        <meta name="keywords"               content="Registro de Oportunidades DCN">
+        <meta name="description"            content="Registro de Oportunidades HPE">
+        <meta name="keywords"               content="Registro de Oportunidades HPE">
         <meta name="robots"                 content="Index,Follow">
-        <meta name="date"                   content="Febrero 15, 2018"/>
+        <meta name="date"                   content="Agosto 22, 2018"/>
         <meta name="language"               content="es">
         <meta name="theme-color"            content="#000000">
     	<title>HPE Microsoft</title>
@@ -20,7 +20,6 @@
         <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>material-icons.css?v=<?php echo time();?>">
         <link rel="stylesheet"    href="<?php echo RUTA_FONTS?>metric.css?v=<?php echo time();?>">
     	<link rel="stylesheet"    href="<?php echo RUTA_CSS?>m-p.min.css?v=<?php echo time();?>">
-    	<!-- <link rel="stylesheet"    href="<?php echo RUTA_CSS?>index.css?v=<?php echo time();?>"> -->
         <link rel="stylesheet"    href="<?php echo RUTA_CSS?>style.css?v=<?php echo time();?>">
     </head>
     <body>
@@ -30,7 +29,7 @@
                 <img src="<?php echo RUTA_IMG?>logo/microsoft-logo.png">
             </div>
             <div class="js-header--right">
-                <p>Registro de Oportunidades Centroam&eacute;rica</p>
+                <p>Registro de Oportunidades</p>
             </div>
         </div>
         <section class="js-section js-height">
@@ -60,12 +59,6 @@
                             <a onclick="openModalRecuperar()">¿Olvidaste tu contrase&ntilde;a?</a>
                         </div>
                     </div>
-                    <!-- <div class="col-xs-12 mdl-card__actions text-left" onclick="openModalCambiar()">
-                        <span>Cambiar contraseña</span>
-                    </div>
-                    <div class="col-xs-12 mdl-card__actions text-left" onclick="openModalCrear()">
-                        <span >Registrarse</span>
-                    </div> -->
                 </div>
             </div>
         </section>
@@ -122,9 +115,29 @@
                 </div>
             </div>
         </div>
+        <!-- MODAL TIPO PROMO -->
+        <div class="modal fade" id="ModalTipoPromo" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="mdl-card">
+                        <div class="mdl-card__title">
+                            <h2>Bienvenido</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <h3>Por favor seleccione una opción</h3>
+                            <p>Depende de la selección se le asignaran sus puntos</p>
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a href="es/Home" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">SERVERS</a>
+                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-dismiss="modal">STORAGE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!--MODAL REGISTRAR NUEVO USUARIO -->
-        <div class="modal fade" id="registroUsuario" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <!-- <div class="modal fade" id="registroUsuario" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-md text-center">
                 <div class="modal-content">
                     <div class="mdl-card">
@@ -162,53 +175,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <!-- <section class>
-            <div class="header">
-                <div class="mdl-container row">
-                    <div class="col-xs-12">
-                        <div class="col-xs-6 text-left p-0">
-                            <img src="<?php echo RUTA_IMG?>logo/logo_header.png">
-                        </div>
-                        <div class="col-xs-6 text-right p-0">
-                            <p>Registro de oportunidades HPE</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="center-login">
-                <div class="mdl-card mdl-card-login">
-                    <div class="mdl-card__supporting-text">
-                        <div class="col-xs-12 form-group mdl-input">
-                            <label for="usuario">Username</label>
-                            <input type="text" id="usuario" placeholder="" onkeyup="verificarDatos(event);">
-                        </div>
-                        <div class="col-xs-12 form-group mdl-input">
-                            <label for="password">Password</label>
-                            <input type="password" id="password" onkeyup="verificarDatos(event);">
-                        </div>
-                        <div class="col-xs-12 mdl-label">
-                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember">
-                                <input type="checkbox" id="remember" class="mdl-checkbox__input">
-                                <span class="mdl-checkbox__label">Remember me</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="mdl-card__actions p-0">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="ingresar()">Login</button>
-                    </div>
-                    <div class="col-xs-12 mdl-create">
-                        <div class="col-xs-6">
-                            <a href="">Forgot password</a>
-                        </div>
-                        <div class="col-xs-6">
-                            <a href="Registro">Create an account</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
+        </div> -->
         <script src="<?php echo RUTA_JS?>jquery-3.2.1.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_JS?>jquery-1.11.2.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_PLUGINS?>bootstrap/js/bootstrap.min.js?v=<?php echo time();?>"></script>

@@ -32,7 +32,7 @@
             <img src="<?php echo RUTA_IMG?>logo/microsoft-logo.png">
         </div>
         <div class="js-header--right">
-            <p>Registro de Oportunidades Centroam&eacute;rica</p>
+            <p>Registro de Oportunidades</p>
             <a onclick="cerrarSesion()">Cerrar Sesi&oacute;n</a>
         </div>
     </div>
@@ -43,7 +43,6 @@
                 <a id="cotizacion" class="mdl-navigation__link active" onclick="goToMenu(this.id)">Ingresar una nueva cotizaci&oacute;n</a>
                 <a id="puntaje" class="mdl-navigation__link" onclick="goToMenu(this.id)">Ver puntaje acumulado</a>
                 <a id="terminos" class="mdl-navigation__link" onclick="goToMenu(this.id)">T&eacute;rminos y Condiciones</a>
-                <!-- <a id="champion" class="mdl-navigation__link" onclick="goToMenu(this.id)" ="">Escribir al Champion</a> -->
             </nav>
         </div>
         <main class="mdl-layout__content">
@@ -197,28 +196,27 @@
             </section>
             <section id="section-terminos" class="js-section js-section--menu js-opacity-done">
                 <div class="js-container">
-                    <h2 class="js-title">T&eacute;rminos y condiciones generales</h2>
+                    <h2 class="js-title">T&eacute;rminos y condiciones</h2>
                     <div class="js-terminos">
-                        <h3>Premios:</h3>
-                        <ul>
-                            <li>
-                                <span>Licencias Standard:</span>
-                                <p>50 puntos ENGAGE&GROW por cada cotizacion + 200 puntos adicionales por cierre de la oportunidad al mayorista</p>
-                                <p>El reseller gana otros 250 puntos por venta cerrada.</p>
-                            </li>
-                            <li>
-                                <span>Licencias de DataCenter:</span>
-                                <p>100 puntos ENGAGE&GROW por cada cotizacion + 300 puntos adicionales por cierre de la oportunidad al mayorista.</p>
-                                <p>El reseller gana otros 400 puntos por venta cerrada.</p>
-                            </li>
-                        </ul>
-                        <h3>T&eacute;rminos & Condiciones</h3>
-                        <ul>
-                            <li>Solo se pueden hacer 4 cotizaciones por resellers por trimestre.</li>
-                            <li>Las ventas valen aún cuando no hayan sido cotizadas.</li>
-                            <li>Las cotizaciones valen aún cuando no se cierre la venta.</li>
-                            <li>Cantidad límite de puntos disponibles para esta campaña: 40.000 puntos.</li>
-                        </ul>
+                        <h3>Storage:</h3>
+                        <ol>
+                            <li> 100 dólares en puntos Engage & Grow por órdenes superiores a los 20k en productos de esta promoción de Storage (link de Promos Mae Simple de esa promoción—que es la que te estoy debiendo y necesitamos subir asap)</li>
+                            <li> No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
+                            <li> Promoción válida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
+                            <li> Únicamente válido por compras realizadas a través de mayoristas autorizados.</li>
+                            <li> Los puntos serán acreditados en la cuenta de Engage & Grow máximo el 15 de Noviembre, 2018</li>
+                            <li> HPE se reserva el derecho de modificar estos Términos y Condiciones, cambiar, reestructurar o descontinuar este incentivo en cualquier  momento sin previo aviso a los participantes.</li>
+                        </ol>
+                        <h3>Servers:</h3>
+                        <ol>
+                            <li> 50 dólares en puntos Engage & Grow por órdenes superiores a 15k en la Promo flex Attach de Servidores (http://www.hpepromosmadesimple.com/Categorias ).</li>
+                            <li> No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
+                            <li> Las cotizaciones valen aún cuando no se cierre la venta.</li>
+                            <li> Promoción válida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
+                            <li> Únicamente válido por compras realizadas a través de mayoristas autorizados.</li>
+                            <li> Los puntos serán acreditados en la cuenta de Engage & Grow máximo el 15 de Noviembre, 2018.</li>
+                            <li> HPE se reserva el derecho de modificar estos Términos y Condiciones, cambiar, reestructurar o descontinuar este incentivo en cualquier  momento sin previo aviso a los participantes.</li>
+                        </ol>
                     </div>
                 </div>
             </section>

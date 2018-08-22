@@ -28,7 +28,6 @@ function ingresar(){
 	}).done(function(data){
 		try{
             data = JSON.parse(data);
-            console.log(data.pass);
             if(data.error == 0){
             	$('#usuario').val("");
             	$('#password').val("");
