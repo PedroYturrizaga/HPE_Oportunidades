@@ -181,7 +181,7 @@
                         </ol>
                         <h3>Servers:</h3>
                         <ol>
-                            <li>50 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a 15k en la Promo flex Attach de Servidores (http://www.hpepromosmadesimple.com/Categorias ).</li>
+                            <li>50 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a 15k en la Promo flex Attach de Servidores.</li>
                             <li>No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
                             <li>Las cotizaciones valen a&uacute;n cuando no se cierre la venta.</li>
                             <li>Promoci&oacute;n v&aacute;lida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
