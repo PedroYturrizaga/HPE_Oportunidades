@@ -56,11 +56,11 @@
             </section>
             <section id="section-cotizacion" class="js-section js-section--menu">
                 <div class="js-container">
-                    <h2 class="js-title">Nuevo ingreso</h2>
+                    <h2 class="js-title">¡Gana 100 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en la promoci&oacute;n de Storage Accelerate!</h2>
                     <div class="col-xs-12 p-0">
                         <div class="col-sm-6 col-xs-12">
                             <div class="col-xs-12 js-input">
-                                <label for="Nombre">Nombre del vendedor del canal</label>
+                                <label for="Nombre">Nombre</label>
                                 <input type="text" id="Nombre" onchange="validarCampos()">
                             </div>
                             <div class="col-xs-12 js-input">
@@ -75,6 +75,10 @@
                                 <label for="email">Email</label>
                                 <input type="email" id="email" onchange="validarCampos()">
                             </div>
+                            <div class="col-xs-12 js-input">
+                                <label for="telefono">Tel&eacute;fono</label>
+                                <input type="text" id="telefono" onchange="validarCampos()">
+                            </div>
                             <div class="col-xs-12 js-input js-radio">
                                 <label>¿Tienes una cuenta de Engage&Grow activa?</label>
                                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="radioCotizacion">
@@ -86,28 +90,28 @@
                                     <span class="mdl-radio__label">No</span>
                                 </label>
                             </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
                             <div class="col-xs-12 js-input js-select">
                                 <select name="noMayorista" id="noMayorista"> 
                                     <?php echo $option ?>
                                 </select>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-xs-12">
                             <div class="col-xs-12 js-input">
-                                <label for="NombreContacto">Nombre contacto</label>
-                                <input type="text" id="NombreContacto" onchange="validarCampos()">
+                                <label for="NombreContacto">Nombre de la persona que te atendi&oacute; dentro del mayorista</label>
+                                <input type="text" id="NombrePersona" onchange="validarCampos()">
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="emailContacto">Email contacto</label>
+                                <label for="emailContacto">Email del contacto que te atendi&oacute; dentro del mayorista</label>
                                 <input type="email" id="emailContacto" onchange="validarCampos()">
                             </div>
 
                             <div class="col-xs-12 js-input">
-                                <label for="numFactura"># de Documento</label>
+                                <label for="numFactura"># de la factura del mayorista con el que se factur&oacute;</label>
                                 <input type="text" id="numFactura" onchange="validarCampos()">
                             </div>
                             <div class="col-xs-12 js-input js-date js-flex">
-                                <input type="text" id="fecha" name="fecha" maxlength="10" placeholder="Fecha del documento" value="" style="pointer-events: none">
+                                <input type="text" id="fecha" name="fecha" maxlength="10" placeholder="Fecha de Facturación" value="" style="pointer-events: none">
                                 <div class="js-icon">
                                     <button type="button" class="mdl-button mdl-js-button mdl-button--icon">
                                         <i class="mdi mdi-date_range"></i>
@@ -115,7 +119,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="monto">Monto en USD</label>
+                                <label for="monto">Monto total de la orden de compra en USD</label>
                                 <input type="text" id="monto" placeholder="0.00" onchange="validarCampos()">
                             </div>
                             <div class="col-xs-12 js-input js-file js-flex">
