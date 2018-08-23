@@ -172,22 +172,22 @@
                     <div class="js-terminos">
                         <h3>Storage:</h3>
                         <ol>
-                            <li> 100 dólares en puntos Engage & Grow por órdenes superiores a los 20k en productos de esta promoción de Storage (link de Promos Mae Simple de esa promoción—que es la que te estoy debiendo y necesitamos subir asap)</li>
-                            <li> No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
-                            <li> Promoción válida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
-                            <li> Únicamente válido por compras realizadas a través de mayoristas autorizados.</li>
-                            <li> Los puntos serán acreditados en la cuenta de Engage & Grow máximo el 15 de Noviembre, 2018</li>
-                            <li> HPE se reserva el derecho de modificar estos Términos y Condiciones, cambiar, reestructurar o descontinuar este incentivo en cualquier  momento sin previo aviso a los participantes.</li>
+                            <li>100 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 20k en productos de esta promoci&oacute;n de Storage.</li>
+                            <li>No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
+                            <li>Promoci&oacute;n v&aacute;lida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
+                            <li>&Uacute;nicamente v&aacute;lido por compras realizadas a trav&eacute;s de mayoristas autorizados.</li>
+                            <li>Los puntos ser&aacute;n acreditados en la cuenta de Engage & Grow m&aacute;ximo el 15 de Noviembre, 2018</li>
+                            <li>HPE se reserva el derecho de modificar estos T&eacute;rminos y Condiciones, cambiar, reestructurar o descontinuar este incentivo en cualquier  momento sin previo aviso a los participantes.</li>
                         </ol>
                         <h3>Servers:</h3>
                         <ol>
-                            <li> 50 dólares en puntos Engage & Grow por órdenes superiores a 15k en la Promo flex Attach de Servidores (http://www.hpepromosmadesimple.com/Categorias ).</li>
-                            <li> No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
-                            <li> Las cotizaciones valen aún cuando no se cierre la venta.</li>
-                            <li> Promoción válida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
-                            <li> Únicamente válido por compras realizadas a través de mayoristas autorizados.</li>
-                            <li> Los puntos serán acreditados en la cuenta de Engage & Grow máximo el 15 de Noviembre, 2018.</li>
-                            <li> HPE se reserva el derecho de modificar estos Términos y Condiciones, cambiar, reestructurar o descontinuar este incentivo en cualquier  momento sin previo aviso a los participantes.</li>
+                            <li>50 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a 15k en la Promo flex Attach de Servidores (http://www.hpepromosmadesimple.com/Categorias ).</li>
+                            <li>No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
+                            <li>Las cotizaciones valen a&uacute;n cuando no se cierre la venta.</li>
+                            <li>Promoci&oacute;n v&aacute;lida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
+                            <li> &Uacute;nicamente v&aacute;lido por compras realizadas a trav&eacute;s de mayoristas autorizados.</li>
+                            <li>Los puntos ser&aacute;n acreditados en la cuenta de Engage & Grow m&aacute;ximo el 15 de Noviembre, 2018.</li>
+                            <li>HPE se reserva el derecho de modificar estos T&eacute;rminos y Condiciones, cambiar, reestructurar o descontinuar este incentivo en cualquier momento sin previo aviso a los participantes.</li>
                         </ol>
                     </div>
                 </div>
