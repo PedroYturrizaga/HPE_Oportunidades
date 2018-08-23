@@ -114,67 +114,6 @@
                 </div>
             </div>
         </div>
-        <!-- MODAL TIPO PROMO -->
-        <div class="modal fade" id="ModalTipoPromo" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-                    <div class="mdl-card">
-                        <div class="mdl-card__title">
-                            <h2>Bienvenido</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <h3>Por favor seleccione una opción</h3>
-                            <p>Depende de la selección se le asignaran sus puntos</p>
-                        </div>
-                        <div class="mdl-card__actions">
-                            <a href="es/Home" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">SERVERS</a>
-                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-dismiss="modal">STORAGE</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--MODAL REGISTRAR NUEVO USUARIO -->
-        <!-- <div class="modal fade" id="registroUsuario" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog modal-md text-center">
-                <div class="modal-content">
-                    <div class="mdl-card">
-                        <div class="mdl-card__supporting-text">
-                            <h2>REGISTRAR USUARIO</h2>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="text" class="form-control" id="nombre" placeholder="Nombre" onchange="validarCampos()">
-                            </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" onchange="validarCampos()">
-                            </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="text" class="form-control" id="canal" placeholder="Canal" onchange="validarCampos()">
-                            </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="text" class="form-control" id="pais" placeholder="Pais" onchange="validarCampos()">
-                            </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="email" class="form-control" id="email" placeholder="Email" onchange="validarCampos()">
-                            </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="text" class="form-control" id="movil" placeholder="M&oacute;vil" onchange="validarCampos()">
-                            </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="password" class="form-control" id="pass" placeholder="Contrase&ntilde;a" onchange="validarCampos()">
-                            </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="password" class="form-control" id="passRep" placeholder="Repetir contrase&ntilde;" onchange="validarCampos()">
-                            </div>
-                        </div> 
-                        <div class="mdl-card__actions">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-dismiss="modal">Cancelar</button>
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="registrar()">Aceptar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
         <script src="<?php echo RUTA_JS?>jquery-3.2.1.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_JS?>jquery-1.11.2.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_PLUGINS?>bootstrap/js/bootstrap.min.js?v=<?php echo time();?>"></script>
