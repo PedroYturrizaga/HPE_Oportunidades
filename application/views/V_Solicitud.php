@@ -64,23 +64,18 @@
                                 <input type="text" id="Nombre" onchange="validarCampos()">
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="canal">Canal al que cotiza (CAMBIAR)</label>
-                                <input type="text" id="canal" onchange="validarCampos()">
+                                <label for="compania">Compa&ntilde;&iacute;a</label>
+                                <input type="text" id="compania" onchange="validarCampos()">
                             </div>
                             <div class="col-xs-12 js-input">
                                 <label for="pais">Pais</label>
                                 <input type="text" id="pais" onchange="validarCampos()">
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="email">Email (debe ser el mismo que tiene registrado en Engage & Grow)</label>
+                                <label for="email">Email</label>
                                 <input type="email" id="email" onchange="validarCampos()">
                             </div>
-                            <div class="col-xs-12 js-input js-select">
-                                <select name="noMayorista" id="noMayorista"> 
-                                    <?php echo $option ?>
-                                </select>
-                            </div>
-                            <div class="col-xs-12 js-input js-radio" onchange="calcularWSEE(); calcularWSSE(); calcularWSDE(); calcularCAL();">
+                            <div class="col-xs-12 js-input js-radio">
                                 <label>¿Tienes una cuenta de Engage&Grow activa?</label>
                                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="radioCotizacion">
                                     <input type="radio" id="radioCotizacion" class="mdl-radio__button" name="option1" value="1" onchange="validarCampos()">
@@ -91,8 +86,22 @@
                                     <span class="mdl-radio__label">No</span>
                                 </label>
                             </div>
+                            <div class="col-xs-12 js-input js-select">
+                                <select name="noMayorista" id="noMayorista"> 
+                                    <?php echo $option ?>
+                                </select>
+                            </div>
                         </div>
                         <div class="col-sm-6 col-xs-12">
+                            <div class="col-xs-12 js-input">
+                                <label for="NombreContacto">Nombre contacto</label>
+                                <input type="text" id="NombreContacto" onchange="validarCampos()">
+                            </div>
+                            <div class="col-xs-12 js-input">
+                                <label for="emailContacto">Email contacto</label>
+                                <input type="email" id="emailContacto" onchange="validarCampos()">
+                            </div>
+
                             <div class="col-xs-12 js-input">
                                 <label for="numFactura"># de Documento</label>
                                 <input type="text" id="numFactura" onchange="validarCampos()">

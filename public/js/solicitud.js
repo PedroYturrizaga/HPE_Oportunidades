@@ -9,16 +9,21 @@ $( window ).load(function(){
 var seleccion = null;
 function registrar() {
 	var Nombre 		= $('#Nombre').val();
+	var canal 		= $('#compania').val();
+	var pais 		= $('#pais').val();
 	var email 		= $('#email').val();
+
 	var idMayorista = $('#noMayorista').val();
-	var canal 		= $('#canal').val();
+	var NombreContacto= $('#NombreContacto').val();
+	var emailContacto = $('#emailContacto').val();
 	var numFactura  = $('#numFactura').val();
+	var fecha		= $('#fecha').val();
+	var newdate     = fecha.split("/").reverse().join("-");
 	var monto		= $('#monto').val();
 	monto 			= monto.replace(",", "");
-	var pais 		= $('#pais').val();
 	var facturacion = $('#radioFacturacion').is(':checked');
 	var cotizacion  = $('#radioCotizacion').is(':checked');
-	var cuentaActi	= null;
+	var cuentaActiva= null;
 	var puntos      = 0;
 
 	seleccion    = (cotizacion == true) ? 'cotizacion' : 'factura';
@@ -30,8 +35,6 @@ function registrar() {
 	if(factura['size'] > 2048000){
 		return;
 	}
-	var fecha		= $('#fecha').val();
-	var newdate     = fecha.split("/").reverse().join("-");
 	
 	if(Nombre == '' && email == '' && noMayorista == '' && canal == '' && numFactura == '' && monto == '' && fecha == '' ){
 		validarCampos();
@@ -84,10 +87,10 @@ function registrar() {
 		return;		
 	}
 	if(facturacion == true){
-		cuentaActi = 0;
+		cuentaActiva = 0;
 	}
 	if(cotizacion == true){
-		cuentaActi = 1;
+		cuentaActiva = 1;
 	}
 	$.ajax({
 		data  : { Nombre 	  : Nombre,
@@ -95,7 +98,7 @@ function registrar() {
 				  idMayorista : idMayorista,
 				  fecha		  : newdate,
 				  canal 	  : canal,
-				  cuentaActi  : cuentaActi,
+				  cuentaActiva: cuentaActiva,
 				  pais		  : pais,
 				  numFactura  : numFactura,
 				  monto		  : monto ,
