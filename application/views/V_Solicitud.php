@@ -29,7 +29,6 @@
     <div class="js-header js-relative">
         <div class="js-header--left">
             <img class="js-partner" src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
-            <img src="<?php echo RUTA_IMG?>logo/microsoft-logo.png">
         </div>
         <div class="js-header--right">
             <p>Registro de Oportunidades</p>
@@ -59,14 +58,18 @@
                 <div class="js-container">
                     <h2 class="js-title">Nuevo ingreso</h2>
                     <div class="col-xs-12 p-0">
-                        <div class="col-sm-6 col-xs-12"> 
-                            <div class="col-xs-12 js-input">
-                                <label for="canal">Canal al que cotiza</label>
-                                <input type="text" id="canal" onchange="validarCampos()">
-                            </div>
+                        <div class="col-sm-6 col-xs-12">
                             <div class="col-xs-12 js-input">
                                 <label for="Nombre">Nombre del vendedor del canal</label>
                                 <input type="text" id="Nombre" onchange="validarCampos()">
+                            </div>
+                            <div class="col-xs-12 js-input">
+                                <label for="canal">Canal al que cotiza (CAMBIAR)</label>
+                                <input type="text" id="canal" onchange="validarCampos()">
+                            </div>
+                            <div class="col-xs-12 js-input">
+                                <label for="pais">Pais</label>
+                                <input type="text" id="pais" onchange="validarCampos()">
                             </div>
                             <div class="col-xs-12 js-input">
                                 <label for="email">Email (debe ser el mismo que tiene registrado en Engage & Grow)</label>
@@ -77,19 +80,15 @@
                                     <?php echo $option ?>
                                 </select>
                             </div>
-                            <div class="col-xs-12 js-input">
-                                <label for="pais">Pais</label>
-                                <input type="text" id="pais" onchange="validarCampos()">
-                            </div>
                             <div class="col-xs-12 js-input js-radio" onchange="calcularWSEE(); calcularWSSE(); calcularWSDE(); calcularCAL();">
-                                <label>Tipo Documento:</label>
+                                <label>¿Tienes una cuenta de Engage&Grow activa?</label>
                                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="radioCotizacion">
                                     <input type="radio" id="radioCotizacion" class="mdl-radio__button" name="option1" value="1" onchange="validarCampos()">
-                                    <span class="mdl-radio__label">Cotizaci&oacute;n</span>
+                                    <span class="mdl-radio__label">Sí</span>
                                 </label>
                                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="radioFacturacion">
                                     <input type="radio" id="radioFacturacion" class="mdl-radio__button" name="option1" value="0" onchange="validarCampos()">
-                                    <span class="mdl-radio__label">Factura</span>
+                                    <span class="mdl-radio__label">No</span>
                                 </label>
                             </div>
                         </div>
@@ -116,42 +115,6 @@
                                     <button type="button" class="mdl-button mdl-js-button mdl-button--icon" onclick="subirFactura()">
                                         <i class="mdi mdi-backup"></i>
                                     </button>
-                                </div>
-                            </div>
-                            <div class="js-table col-xs-12">
-                                <h2>Productos</h2>
-                                <div class="table-responsive">
-                                    <table id="tbProductos" class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>Licencia Microsoft</th>
-                                                <th class="text-right col-xs-2">Unidades</th>
-                                                <th class="text-right col-xs-2">Puntos</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td id="product1">Windows Server Essentials Edition</td>
-                                                <td class="text-right col-xs-2 js-table--input"><input type="text" id="cantidadWSEE" name="cantidadWSEE" autocomplete="off" onchange="calcularWSEE()" /></td>
-                                                <td class="text-right col-xs-2 js-table--input"><span id="puntosWSEE"></span></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="product2">Windows Server Standard Edition</td>
-                                                <td class="text-right col-xs-2 js-table--input"><input type="text" id="cantidadWSSE" name="cantidadWSSE" autocomplete="off" onchange="calcularWSSE()"/></td>
-                                                <td class="text-right col-xs-2 js-table--input"><span id="puntosWSSE"></span></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="product3">Windows Server Datacenter Edition</td>
-                                                <td class="text-right col-xs-2 js-table--input"><input type="text" id="cantidadWSDE" name="cantidadWSDE" autocomplete="off" onchange="calcularWSDE()"/></td>
-                                                <td class="text-right col-xs-2 js-table--input"><span id="puntosWSDE"></span></td>
-                                            </tr>
-                                            <tr>
-                                                <td id="product4">CALs</td>
-                                                <td class="text-right col-xs-2 js-table--input"><input type="text" id="cantidadCAL" name="cantidadCAL" autocomplete="off" onchange="calcularCAL()"/></td>
-                                                <td class="text-right col-xs-2 js-table--input"><span id="puntosCAL"></span></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +206,7 @@
         </div>
     </div>
     <form id="frmArchivo" method="post" style="display: none;">
-        <input id="archivo" type="file" name="archivo" />
+        <input id="archivo" type="file" name="archivo" accept=".jpg,.pdf,.png"/>
         <input type="hidden" name="MAX_FILE_SIZE" value="2000000"/>
     </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

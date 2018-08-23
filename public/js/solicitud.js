@@ -18,7 +18,7 @@ function registrar() {
 	var pais 		= $('#pais').val();
 	var facturacion = $('#radioFacturacion').is(':checked');
 	var cotizacion  = $('#radioCotizacion').is(':checked');
-	var tipoDoc		= null;
+	var cuentaActi	= null;
 	var puntos      = 0;
 
 	seleccion    = (cotizacion == true) ? 'cotizacion' : 'factura';
@@ -30,26 +30,6 @@ function registrar() {
 	if(factura['size'] > 2048000){
 		return;
 	}
-	
-	var puntosWSEE = $('#puntosWSEE').text() != ""  ? parseInt($('#puntosWSEE').text()) : 0 ;
-	var puntosWSSE = $('#puntosWSSE').text() != ""  ? parseInt($('#puntosWSSE').text()) : 0 ;
-	var puntosWSDE = $('#puntosWSDE').text() != ""  ? parseInt($('#puntosWSDE').text()) : 0 ;
-	var puntosCAL  = $('#puntosCAL').text()  != ""  ? parseInt($('#puntosCAL').text())  : 0 ;
-	
-	puntos = puntosWSEE + puntosWSSE + puntosWSDE + puntosCAL;
-
-	var noProducto1 = "Windows Server Essentials Edition";
-	var cantidadWSEE= $('#cantidadWSEE').val();
-
-	var noProducto2 = "Windows Server Standard Edition";
-	var cantidadWSSE= $('#cantidadWSSE').val();
-
-	var noProducto3 = "Windows Server Datacenter Edition";
-	var cantidadWSDE= $('#cantidadWSDE').val();
-
-	var noProducto4 = "CALs";
-	var cantidadCAL = $('#cantidadCAL').val();
-	
 	var fecha		= $('#fecha').val();
 	var newdate     = fecha.split("/").reverse().join("-");
 	
@@ -104,10 +84,10 @@ function registrar() {
 		return;		
 	}
 	if(facturacion == true){
-		tipoDoc = 0;
+		cuentaActi = 0;
 	}
 	if(cotizacion == true){
-		tipoDoc = 1;
+		cuentaActi = 1;
 	}
 	$.ajax({
 		data  : { Nombre 	  : Nombre,
@@ -115,18 +95,10 @@ function registrar() {
 				  idMayorista : idMayorista,
 				  fecha		  : newdate,
 				  canal 	  : canal,
-				  tipoDoc 	  : tipoDoc,
+				  cuentaActi  : cuentaActi,
 				  pais		  : pais,
 				  numFactura  : numFactura,
 				  monto		  : monto ,
-				  noProducto1 : noProducto1,
-				  noProducto2 : noProducto2 ,
-				  noProducto3 : noProducto3,
-				  noProducto4 : noProducto4 ,
-				  cantidadWSEE: cantidadWSEE,
-				  cantidadWSSE: cantidadWSSE ,
-				  cantidadWSDE: cantidadWSDE,
-				  cantidadCAL : cantidadCAL,
 				  puntos 	  : puntos},
 		url   : 'solicitud/registrar',
 		type  : 'POST'
@@ -140,7 +112,6 @@ function registrar() {
         		$('#bodyUltimaCotizacion').html(data.bodyCotizaciones);
         		$('#bodyCanales').html(data.bodyCanales);
         		setTimeout(500,limpiarCampos());
-        		// limpiarCampos();
         	} else { return; }
       } catch (err){
         msj('error',err.message);
@@ -152,23 +123,15 @@ function subirFactura(){
 	$("#archivo").trigger("click");
 }
 $("#archivo").change(function(e) {
-	var files = e.target.files,
-	    filesLength = files.length;
-	for (var i = 0; i < filesLength ; i++) {
-		var f = files[i]
-		var archivo = (f.name).replace(" ","");
-		nombre = archivo;
-	}
-	$('#archivoDocumento').val(nombre);
+	var files = e.target.files;
+    var archivo = files[0].name;
+    archivo = archivo.replace(/\s/g,"_");
+	$('#archivoDocumento').val(archivo);
 });
 
 function agregarDatos(){
 	var datos = new FormData();
 	factura = $('#archivo')[0].files[0];
-	if(factura == undefined){
-		//msj('error', 'Seleccione una factura');
-		return;
-	}
 	if(factura['size'] > 2048000){
 		msj('error', 'La factura debe ser menor a 2MB');
 		return;
@@ -212,15 +175,6 @@ function limpiarCampos(){
 	$('#numFactura').val(null);
 	$('#monto').val(null);
 	$('#pais').val(null);
-	$('#cantidadWSEE').val(null);
-	$('#cantidadWSSE').val(null);
-	$('#cantidadWSDE').val(null);
-	$('#cantidadCAL').val(null);
-	$('#archivoDocumento').val(null);
-	$('#puntosWSEE').text('');
-	$('#puntosWSSE').text('');
-	$('#puntosWSDE').text('');
-	$('#puntosCAL').text('');
 	$('.selectpicker').selectpicker('refresh');
 	$('#attach').val('0');
 	$('.selectpicker').selectpicker('refresh');
@@ -277,111 +231,6 @@ function isEmpty(val){
     	return false;
 		return true;
 }
-
-function calcularWSEE() {
-	var facturacion = $('#radioFacturacion').is(':checked');
-	var cotizacion  = $('#radioCotizacion').is(':checked');
-	seleccion    	= (facturacion == true) ? 'factura' : 'cotizacion';
-	var WSEE 		= $('#cantidadWSEE').val();
-	var total		= 0;
-	if(facturacion == false && cotizacion == false) {
-		return;
-	} else {
-		if(seleccion == 'cotizacion') {
-			if(WSEE != '' && parseInt(WSEE)  > 0) {
-				total = 50 * WSEE;
-		 		$('#puntosWSEE').text(total);
-			} else {
-				$('#puntosWSEE').text('');
-			}
-		} else {
-			if(WSEE != '' && parseInt(WSEE)  > 0) {
-				total = 200 * WSEE;
-		 		$('#puntosWSEE').text(total);
-			} else {
-				$('#puntosWSEE').text('');
-			}
-		}
-	}
-}
-function calcularWSSE() {
-	var facturacion = $('#radioFacturacion').is(':checked');
-	var cotizacion  = $('#radioCotizacion').is(':checked');
-	seleccion    	= (facturacion == true) ? 'factura' : 'cotizacion';
-	var WSSE 		= $('#cantidadWSSE').val();
-	var total		= 0;
-	if(facturacion == false && cotizacion == false) {
-		return;
-	} else {
-		if(seleccion == 'cotizacion') {
-			if(WSSE != '' && parseInt(WSSE)  > 0) {
-				total = 50 * WSSE;
-		 		$('#puntosWSSE').text(total);
-			} else {
-				$('#puntosWSSE').text('');
-			}
-		} else {
-			if(WSSE != '' && parseInt(WSSE)  > 0) {
-				total = 200 * WSSE;
-		 		$('#puntosWSSE').text(total);
-			} else {
-				$('#puntosWSSE').text('');
-			}
-		}
-	}
-}
-function calcularWSDE() {
-	var facturacion = $('#radioFacturacion').is(':checked');
-	var cotizacion  = $('#radioCotizacion').is(':checked');
-	seleccion    	= (facturacion == true) ? 'factura' : 'cotizacion';
-	var WSDE 		= $('#cantidadWSDE').val();
-	var total		= 0;
-	if(facturacion == false && cotizacion == false) {
-		return;
-	} else {
-		if(seleccion == 'cotizacion') {
-			if(WSDE != '' && parseInt(WSDE)  > 0) {
-				total = 100 * WSDE;
-		 		$('#puntosWSDE').text(total);
-			} else {
-				$('#puntosWSDE').text('');
-			}
-		} else {
-			if(WSDE != '' && parseInt(WSDE)  > 0) {
-				total = 300 * WSDE;
-		 		$('#puntosWSDE').text(total);
-			} else {
-				$('#puntosWSDE').text('');
-			}
-		}
-	}
-}
-function calcularCAL() {
-	var facturacion = $('#radioFacturacion').is(':checked');
-	var cotizacion  = $('#radioCotizacion').is(':checked');
-	seleccion    = (facturacion == true) ? 'factura' : 'cotizacion';
-	var CAL = $('#cantidadCAL').val();
-	var total		= 0;
-	if(facturacion == false && cotizacion == false) {
-		return;
-	} else {
-		if(seleccion == 'cotizacion') {
-			if(CAL != '' && parseInt(CAL) > 0) {
-				total = 100 * CAL;
-		 		$('#puntosCAL').text(total);
-			} else {
-				$('#puntosCAL').text('');
-			}
-		} else {
-			if(CAL != '' && parseInt(CAL) > 0) {
-				total = 300 * CAL;
-		 		$('#puntosCAL').text(total);
-			} else {
-				$('#puntosCAL').text('');
-			}
-		}
-	}
-}
 function goToMenu(id){
 	var idLink    = $('#'+id);
 	var idSection = $('#section-'+id)
@@ -412,18 +261,15 @@ function cerrarSesion(){
 function downloadCanvas(canvasId, filename) {
     // Obteniendo la etiqueta la cual se desea convertir en imagen
     var domElement = document.getElementById(canvasId);
- 
     // Utilizando la función html2canvas para hacer la conversión
     html2canvas(domElement, {
         onrendered: function(domElementCanvas) {
             // Obteniendo el contexto del canvas ya generado
             var context = domElementCanvas.getContext('2d');
- 
             // Creando enlace para descargar la imagen generada
             var link = document.createElement('a');
             link.href = domElementCanvas.toDataURL("image/png");
             link.download = filename;
- 
             // Chequeando para browsers más viejos
             if (document.createEvent) {
                 var event = document.createEvent('MouseEvents');
@@ -440,7 +286,6 @@ function downloadCanvas(canvasId, filename) {
         }
     });
 }
- 
 // Haciendo la conversión y descarga de la imagen al presionar el botón
 $('#ingresar').click(function() {
     downloadCanvas('section-cotizacion', 'registro_de_oportunidad.png');

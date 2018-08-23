@@ -38,10 +38,9 @@
     <div class="js-header js-fixed">
         <div class="js-header--left">
             <img class="js-partner" src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
-            <img src="<?php echo RUTA_IMG?>logo/microsoft-logo.png">
         </div>
         <div class="js-header--right">
-            <p>Registro de Oportunidades Centroam&eacute;rica</p>
+            <p>Registro de Oportunidades</p>
             <a onclick="cerrarSesion()">Cerrar Sesi&oacute;n</a>
         </div>
     </div>

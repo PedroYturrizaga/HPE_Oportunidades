@@ -5,24 +5,10 @@ class M_Solicitud extends CI_Model {
 		parent::__construct();
 	}
 
-	function insertarCotizacion($arrayInsert, $tabla, $arrayInsertProducto, $tabla2) {
+	function insertarCotizacion($arrayInsert, $tabla) {
 		$this->db->insert($tabla, $arrayInsert);
 		$sql = $this->db->insert_id();
 		if($this->db->affected_rows() != 1) {
-            throw new Exception('Error al insertar');
-            $data['error'] = EXIT_ERROR;
-		}
-
-		$i = 0;
-		$array1 = array();
-		for ($i ; $i < sizeof($arrayInsertProducto['no_producto']); $i ++)  {
-			array_push($array1, array('no_producto' => $arrayInsertProducto['no_producto'][$i],
-									  'cantidad'    => $arrayInsertProducto['cantidad'][$i],
-									  '_id_cotizacion'=> $sql,
-									   ));
-		}
-		$this->db->insert_batch($tabla2, $array1);
-		if($this->db->affected_rows() != $i) {
             throw new Exception('Error al insertar');
             $data['error'] = EXIT_ERROR;
 		}

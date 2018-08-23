@@ -62,44 +62,24 @@ class Solicitud extends CI_Controller {
 			$idMayorista 	= $this->input->post('idMayorista');
 			$numFactura	  	= $this->input->post('numFactura');
 			$monto		 	= floatval($this->input->post('monto'));
-			$tipoDoc 	    = $this->input->post('tipoDoc');
+			$cuentaActi 	= $this->input->post('cuentaActi');
 			$pais			= ucwords(strtolower($this->input->post('pais')));
 			$puntos 		= $this->input->post('puntos');
 
-			$noProducto1	= $this->input->post('noProducto1');
-			$noProducto2	= $this->input->post('noProducto2');
-			$noProducto3	= $this->input->post('noProducto3');
-			$noProducto4	= $this->input->post('noProducto4');
-			$cantidadWSEE	= $this->input->post('cantidadWSEE');
-			$cantidadWSSE	= $this->input->post('cantidadWSSE');
-			$cantidadWSDE	= $this->input->post('cantidadWSDE');
-			$cantidadCAL	= $this->input->post('cantidadCAL');
-
-			$columnaFinal   = (($tipoDoc == 1 ) ? 'puntos_cotizados': 'puntos_cerrados') ;
+			$columnaFinal   = (($cuentaActi == 1 ) ? 'puntos_cotizados': 'puntos_cerrados') ;
 			$arrayInsertCotizacion = array('no_vendedor'   => $nombreVendedor,
 										   'email'		   => $email,
 										   'fecha' 		   => $fecha,
 										   'canal' 		   => $canal,
 										   'mayorista'     => $idMayorista,
-										   'tipo_documento'=> $tipoDoc,
+										   'tipo_documento'=> $cuentaActi,
 										   'pais'		   => $pais,
 										   'nu_cotizacion' => $numFactura,
 										   'monto' 		   => $monto,
 										   $columnaFinal   => $puntos,
 										   '_id_vendedor'  => $idVendedor
 										   );
-			
-			$arrayInsertProducto = array('no_producto' => array 
-														   ($noProducto1,
-															$noProducto2,
-															$noProducto3,
-															$noProducto4),
-										 'cantidad'    => array 
-										 				   ($cantidadWSEE,
-															$cantidadWSSE,
-															$cantidadWSDE,
-															$cantidadCAL) );
-			$datoInsertCotizacion = $this->M_Solicitud->insertarCotizacion($arrayInsertCotizacion, 'tb_cotizacion', $arrayInsertProducto, 'tb_producto');
+			$datoInsertCotizacion = $this->M_Solicitud->insertarCotizacion($arrayInsertCotizacion, 'tb_cotizacion');
 			$this->session->set_userdata(array('id_cotizacion' => $datoInsertCotizacion['id_cotizacion'] ));
 			$data['error'] = EXIT_SUCCESS;
 		} 
@@ -123,15 +103,15 @@ class Solicitud extends CI_Controller {
             $archivotmp = $_FILES['archivo']['tmp_name'];
             $namearch = $_FILES['archivo']['name'];
             $nuevo = explode(".",$namearch);
-            $nombre = "";
+    		$_FILES['archivo']['name'] = str_replace(' ', '_', $_FILES['archivo']['name']);
+            $contador = count($nuevo);
             if($tamanio > '2000000'){
                 $respuesta->mensaje = 'El tamaño de su pdf debe ser menor';
             }else {
-                if($nuevo[1] == 'pdf' || $nuevo[1] == 'jpg' || $nuevo[1] == 'png'){
-                	$nombre = str_replace(" ", "_", $_FILES['archivo']['name']);
-                    $target = getcwd().DIRECTORY_SEPARATOR.'public'.DIRECTORY_SEPARATOR.'archivos'.DIRECTORY_SEPARATOR.basename($nombre);
+                if($nuevo[$contador-1] == 'pdf' || $nuevo[$contador-1] == 'jpg' || $nuevo[$contador-1] == 'png' || $nuevo[$contador-1] == 'PDF' || $nuevo[$contador-1] == 'JPG' || $nuevo[$contador-1] == 'PNG'){
+                    $target = getcwd().DIRECTORY_SEPARATOR.'public'.DIRECTORY_SEPARATOR.'archivos'.DIRECTORY_SEPARATOR.basename($_FILES['archivo']['name']);
                     if(move_uploaded_file($archivotmp, $target) ){
-                        $arrUpdt = array('documento' => $nombre);
+                        $arrUpdt = array('documento' => $_FILES['archivo']['name']);
                         $this->M_Solicitud->updateDatos($arrUpdt, $last, 'tb_cotizacion');
                         $respuesta->mensaje = 'Su factura se subió correctamente';
                         $respuesta->error = EXIT_SUCCESS;
