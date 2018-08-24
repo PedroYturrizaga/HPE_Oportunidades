@@ -82,7 +82,7 @@ class Solicitud extends CI_Controller {
 										   'monto_final'  		=> $monto,
 										   'puntos'  			=> $puntos
 										   );
-			$datoInsertCotizacion = $this->M_Solicitud->insertarCotizacion($arrayInsertCotizacion, 'tb_cotizacion1');
+			$datoInsertCotizacion = $this->M_Solicitud->insertarCotizacion($arrayInsertCotizacion, 'tb_cotizacion');
 			$this->session->set_userdata(array('id_cotizacion' => $datoInsertCotizacion['id_cotizacion'] ));
 			$data['error'] = EXIT_SUCCESS;
 		} 

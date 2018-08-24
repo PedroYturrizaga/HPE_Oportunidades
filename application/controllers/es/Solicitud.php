@@ -56,28 +56,31 @@ class Solicitud extends CI_Controller {
 			$this->session->unset_userdata('id_cotizacion');
 			$idVendedor     = $this->session->userdata('Id_user');
 			$nombreVendedor = ucwords(strtolower($this->input->post('Nombre')));
-			$email			= $this->input->post('email');
-			$fecha		 	= $this->input->post('fecha');
-			$canal		 	= ucwords(strtolower($this->input->post('canal')));
-			$idMayorista 	= $this->input->post('idMayorista');
-			$numFactura	  	= $this->input->post('numFactura');
-			$monto		 	= floatval($this->input->post('monto'));
-			$cuentaActi 	= $this->input->post('cuentaActi');
+			$compania		= $this->input->post('compania');
 			$pais			= ucwords(strtolower($this->input->post('pais')));
+			$email			= $this->input->post('email');
+			$telefono		= $this->input->post('telefono');
+			$cuentaActiva 	= $this->input->post('cuentaActiva');
+			$noMayorista	= ucwords(strtolower($this->input->post('noMayorista')));
+			$NombrePersona	= ucwords(strtolower($this->input->post('NombrePersona')));
+			$emailContacto	= $this->input->post('emailContacto');
+			$numFactura	  	= $this->input->post('numFactura');
+			$fecha		 	= $this->input->post('fecha');
+			$monto		 	= floatval($this->input->post('monto'));
 			$puntos 		= $this->input->post('puntos');
 
-			$columnaFinal   = (($cuentaActi == 1 ) ? 'puntos_cotizados': 'puntos_cerrados') ;
-			$arrayInsertCotizacion = array('no_vendedor'   => $nombreVendedor,
-										   'email'		   => $email,
-										   'fecha' 		   => $fecha,
-										   'canal' 		   => $canal,
-										   'mayorista'     => $idMayorista,
-										   'tipo_documento'=> $cuentaActi,
-										   'pais'		   => $pais,
-										   'nu_cotizacion' => $numFactura,
-										   'monto' 		   => $monto,
-										   $columnaFinal   => $puntos,
-										   '_id_vendedor'  => $idVendedor
+			$arrayInsertCotizacion = array('compania'   		=> $compania,
+										   'pais'		   		=> $pais,
+										   'email' 		   		=> $email,
+										   'telefono' 		   	=> $telefono,
+										   'flg_cuenta_eg'     	=> $cuentaActiva,
+										   'no_mayorista'		=> $noMayorista,
+										   'no_contacto_mayo'	=> $NombrePersona,
+										   'email_contacto' 	=> $emailContacto,
+										   'nu_factura' 		=> $numFactura,
+										   'fecha_factura'  	=> $fecha,
+										   'monto_final'  		=> $monto,
+										   'puntos'  			=> $puntos
 										   );
 			$datoInsertCotizacion = $this->M_Solicitud->insertarCotizacion($arrayInsertCotizacion, 'tb_cotizacion');
 			$this->session->set_userdata(array('id_cotizacion' => $datoInsertCotizacion['id_cotizacion'] ));
@@ -96,7 +99,7 @@ class Solicitud extends CI_Controller {
     	$last = $this->session->userdata('id_cotizacion');
         if(count($_FILES) == 0){
             $data['msj'] = 'Seleccione su factura';
-            $this->M_Solicitud->eliminaRegistro($last, 'tb_cotizacion', 'tb_producto');
+            $this->M_Solicitud->eliminaRegistro($last, 'tb_cotizacion');
         }else {
             $tipo = $_FILES['archivo']['type'];
             $tamanio = $_FILES['archivo']['size']; 
@@ -116,11 +119,11 @@ class Solicitud extends CI_Controller {
                         $respuesta->mensaje = 'Su factura se subió correctamente';
                         $respuesta->error = EXIT_SUCCESS;
                     } else {
-                       $this->M_Solicitud->eliminaRegistro($last, 'tb_cotizacion', 'tb_producto');
+                       $this->M_Solicitud->eliminaRegistro($last, 'tb_cotizacion');
                        $respuesta->mensaje = 'Hubo un problema en la subida de su factura';
                     }
                 }else {
-                    $this->M_Solicitud->eliminaRegistro($last, 'tb_cotizacion', 'tb_producto');
+                    $this->M_Solicitud->eliminaRegistro($last, 'tb_cotizacion');
                     $respuesta->mensaje = 'El formato de la factura es incorrecto';
                 }
             }
