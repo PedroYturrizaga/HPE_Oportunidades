@@ -25,7 +25,7 @@
     <body>
         <div class="js-header js-header--login">
             <div class="js-header--left">
-                <img class="js-partner" src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
+                <img src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
             </div>
             <div class="js-header--right">
                 <p>Promoci&oacute;n Storage Accelerate</p>
@@ -45,13 +45,13 @@
                         <input type="password" id="password" onkeyup="verificarDatos(event);">
                     </div>
                     <div class="col-xs-12 p-0">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--login" onclick="ingresar()">Login</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--login" onclick="ingresar()">Iniciar Sesi&oacute;n</button>
                     </div>
                     <div class="col-xs-12 js-middle">
                         <div class="js-middle--left">
                             <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember">
                                 <input type="checkbox" id="remember" class="mdl-checkbox__input">
-                                <span class="mdl-checkbox__label">Remember me</span>
+                                <span class="mdl-checkbox__label">Recuerdame</span>
                             </label>
                         </div>
                         <div class="js-middle--right">

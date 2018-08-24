@@ -25,7 +25,7 @@
     <body>
         <div class="js-header js-header--login">
             <div class="js-header--left">
-                <img class="js-partner" src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
+                <img src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
             </div>
             <div class="js-header--right">
                 <p>Storage Accelerate Promo</p>
@@ -35,7 +35,7 @@
             <div class="js-fondo--login"></div>
             <div class="js-container js-flex">
                 <div class="js-login">
-                    <h2>Acceso a la Herramienta</h2>
+                    <h2>Access to the Tool</h2>
                     <div class="col-xs-12 js-input m-0">
                         <label for="usuario">User</label>
                         <input type="text" id="usuario" onkeyup="verificarDatos(event);">
@@ -55,7 +55,7 @@
                             </label>
                         </div>
                         <div class="js-middle--right">
-                            <a onclick="openModalRecuperar()">¿Olvidaste tu contrase&ntilde;a?</a>
+                            <a onclick="openModalRecuperar()">Forgot my password?</a>
                         </div>
                     </div>
                 </div>
