@@ -9,23 +9,24 @@ $( window ).load(function(){
 
 var seleccion = null;
 function registrar() {
-	var Nombre 		= $('#Nombre').val();
-	var canal 		= $('#compania').val();
-	var pais 		= $('#pais').val();
-	var email 		= $('#email').val();
+	var Nombre 			= $('#Nombre').val();
+	var compania 		= $('#compania').val();
+	var pais 			= $('#pais').val();
+	var email 			= $('#email').val();
+	var telefono		= $('#telefono').val();
+	var facturacion 	= $('#radioFacturacion').is(':checked');
+	var cotizacion  	= $('#radioCotizacion').is(':checked');
+	var noMayorista 	= $('#noMayorista').val();
+	var NombrePersona 	= $('#NombrePersona').val();
+	var emailContacto  	= $('#emailContacto').val();
+	var numFactura  	= $('#numFactura').val();
+	var fecha			= $('#fecha').val();
+	var newdate     	= fecha.split("/").reverse().join("-");
+	var monto			= $('#monto').val();
+	monto 				= monto.replace(",", "");
 
-	var idMayorista = $('#noMayorista').val();
-	var NombreContacto= $('#NombreContacto').val();
-	var emailContacto = $('#emailContacto').val();
-	var numFactura  = $('#numFactura').val();
-	var fecha		= $('#fecha').val();
-	var newdate     = fecha.split("/").reverse().join("-");
-	var monto		= $('#monto').val();
-	monto 			= monto.replace(",", "");
-	var facturacion = $('#radioFacturacion').is(':checked');
-	var cotizacion  = $('#radioCotizacion').is(':checked');
-	var cuentaActiva= null;
-	var puntos      = 0;
+	var cuentaActiva	= null;
+	var puntos      	= money;
 
 	seleccion    = (cotizacion == true) ? 'cotizacion' : 'factura';
 	factura = $('#archivo')[0].files[0];
@@ -37,7 +38,7 @@ function registrar() {
 		return;
 	}
 	
-	if(Nombre == '' && email == '' && noMayorista == '' && canal == '' && numFactura == '' && monto == '' && fecha == '' ){
+	if(Nombre == '' && email == '' && noMayorista == '' && compania == '' && numFactura == '' && monto == '' && fecha == '' ){
 		validarCampos();
 	}
 	if(Nombre == null || Nombre == ''){
@@ -62,9 +63,9 @@ function registrar() {
 		$('#noMayorista').css('border-color','red');
 		return;
 	}
-	if(canal == null || canal == ''){
-		msj('error', 'Ingrese su canal');
-		$('#canal').css('border-color','red');
+	if(compania == null || compania == ''){
+		msj('error', 'Ingrese su compañia');
+		$('#compania').css('border-color','red');
 		return;
 	}
 	if(numFactura == null || numFactura == ''){
@@ -94,16 +95,19 @@ function registrar() {
 		cuentaActiva = 1;
 	}
 	$.ajax({
-		data  : { Nombre 	  : Nombre,
-				  email 	  : email,
-				  idMayorista : idMayorista,
-				  fecha		  : newdate,
-				  canal 	  : canal,
-				  cuentaActiva: cuentaActiva,
-				  pais		  : pais,
-				  numFactura  : numFactura,
-				  monto		  : monto ,
-				  puntos 	  : puntos},
+		data  : { Nombre 		: Nombre,
+				  compania		: compania,
+				  pais			: pais,
+				  email 		: email,
+				  telefono		: telefono,
+				  cuentaActiva 	: cuentaActiva,
+				  noMayorista	: noMayorista,
+				  NombrePersona	: NombrePersona,
+				  emailContacto	: emailContacto,
+				  numFactura	: numFactura,
+				  fecha			: newdate,
+				  monto			: monto,
+				  puntos 		: puntos },
 		url   : 'solicitud/registrar',
 		type  : 'POST'
 	}).done(function(data){
@@ -175,7 +179,7 @@ function limpiarCampos(){
 	$('#Nombre').val(null);
 	$('#email').val(null);
 	$('#noMayorista').val(null);
-	$('#canal').val(null);
+	$('#compania').val(null);
 	$('#numFactura').val(null);
 	$('#monto').val(null);
 	$('#pais').val(null);
@@ -296,10 +300,11 @@ function downloadCanvas(canvasId, filename) {
 $('#ingresar').click(function() {
     downloadCanvas('section-cotizacion', 'registro_de_oportunidad.png');
 });
+var money = null;
 function goToPromocion(id){
 	$('#ModalTipoPromo').modal('hide');
-	var money = $('#'+id).attr('data-money');
 	var promo = $('#'+id).attr('data-promo');
+		money = $('#'+id).attr('data-money');
 	$('#money').text(money);
 	$('#promocion').text(promo);
 }

@@ -57,38 +57,35 @@ class M_Solicitud extends CI_Model {
 		$this->db->where('id_cotizacion'  , $id);
         $this->db->delete($tabla1);
 
-        $this->db->where('_id_cotizacion'  , $id);
-        $this->db->delete($tabla2);
-
         return array('error' => EXIT_SUCCESS,'msj' => MSJ_DEL);
 	}
 
 // 	PARA EL CHAMPION
-	function getDetallesCotizacion($idCotizacion) {
-		$sql = "SELECT c.email, 
-					   c.no_vendedor, 
-					   c.pais, 
-					   c.canal, 
-					   c.tipo_documento, 
-					   c.nu_cotizacion, 
-					   date_format(c.fecha, '%d/%m/%Y') AS fecha, 
-					   c.monto, 
-					   m.mayorista, 
-					   p.no_producto, 
-					   p.cantidad, 
-					   c.documento
-				  FROM tb_producto p, 
-				       tb_cotizacion c, 
-				       tb_vendedores v, 
-                       tb_mayorista m
-				 WHERE c.id_cotizacion = ".$idCotizacion." 
-				   AND c.id_cotizacion = p._id_cotizacion 
-				   AND p.cantidad <> 0 
-				   AND trim(c.mayorista) = trim(m.mayorista)
-                   GROUP BY p.no_producto";
-	   	$result = $this->db->query($sql);
-	   	return $result->result();
-	}
+	// function getDetallesCotizacion($idCotizacion) {
+	// 	$sql = "SELECT c.email, 
+	// 				   c.no_vendedor, 
+	// 				   c.pais, 
+	// 				   c.canal, 
+	// 				   c.tipo_documento, 
+	// 				   c.nu_cotizacion, 
+	// 				   date_format(c.fecha, '%d/%m/%Y') AS fecha, 
+	// 				   c.monto, 
+	// 				   m.mayorista, 
+	// 				   p.no_producto, 
+	// 				   p.cantidad, 
+	// 				   c.documento
+	// 			  FROM tb_producto p, 
+	// 			       tb_cotizacion c, 
+	// 			       tb_vendedores v, 
+ //                       tb_mayorista m
+	// 			 WHERE c.id_cotizacion = ".$idCotizacion." 
+	// 			   AND c.id_cotizacion = p._id_cotizacion 
+	// 			   AND p.cantidad <> 0 
+	// 			   AND trim(c.mayorista) = trim(m.mayorista)
+ //                   GROUP BY p.no_producto";
+	//    	$result = $this->db->query($sql);
+	//    	return $result->result();
+	// }
 
 	function getCanalMasUsado ($pais, $idUser) {	
 		if($pais == '') {
@@ -183,13 +180,13 @@ class M_Solicitud extends CI_Model {
 		$result = $this->db->query($sql);
 		return $result->result();
 	}
-	function getProductosById($id){
-		$sql    = "SELECT * 
-					 FROM tb_producto
-					WHERE _id_cotizacion = ".$id."";
-		$result = $this->db->query($sql);
-		return $result->result();
-	}
+	// function getProductosById($id){
+	// 	$sql    = "SELECT * 
+	// 				 FROM tb_producto
+	// 				WHERE _id_cotizacion = ".$id."";
+	// 	$result = $this->db->query($sql);
+	// 	return $result->result();
+	// }
 	function getDatosReporte(){
 		$sql = "SELECT id_cotizacion,
 					   email,

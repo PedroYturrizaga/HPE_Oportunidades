@@ -98,7 +98,7 @@
                                 </select>
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="NombreContacto">Nombre de la persona que te atendi&oacute; dentro del mayorista</label>
+                                <label for="NombrePersona">Nombre de la persona que te atendi&oacute; dentro del mayorista</label>
                                 <input type="text" id="NombrePersona" onchange="validarCampos()">
                             </div>
                             <div class="col-xs-12 js-input">
