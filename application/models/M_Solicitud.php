@@ -61,57 +61,51 @@ class M_Solicitud extends CI_Model {
 	}
 
 // 	PARA EL CHAMPION
-	// function getDetallesCotizacion($idCotizacion) {
-	// 	$sql = "SELECT c.email, 
-	// 				   c.no_vendedor, 
-	// 				   c.pais, 
-	// 				   c.canal, 
-	// 				   c.tipo_documento, 
-	// 				   c.nu_cotizacion, 
-	// 				   date_format(c.fecha, '%d/%m/%Y') AS fecha, 
-	// 				   c.monto, 
-	// 				   m.mayorista, 
-	// 				   p.no_producto, 
-	// 				   p.cantidad, 
-	// 				   c.documento
-	// 			  FROM tb_producto p, 
-	// 			       tb_cotizacion c, 
-	// 			       tb_vendedores v, 
- //                       tb_mayorista m
-	// 			 WHERE c.id_cotizacion = ".$idCotizacion." 
-	// 			   AND c.id_cotizacion = p._id_cotizacion 
-	// 			   AND p.cantidad <> 0 
-	// 			   AND trim(c.mayorista) = trim(m.mayorista)
- //                   GROUP BY p.no_producto";
-	//    	$result = $this->db->query($sql);
-	//    	return $result->result();
-	// }
+	function getDetallesCotizacion($idCotizacion) {
+		$sql = "SELECT c.email, 
+					   c.no_contacto_mayo, 
+					   c.pais, 
+					   c.compania, 
+					   c.tipo_documento, 
+					   c.nu_cotizacion, 
+					   date_format(c.fecha, '%d/%m/%Y') AS fecha, 
+					   c.monto, 
+					   m.mayorista, 
+					   c.documento
+				  FROM tb_cotizacion c, 
+				       tb_vendedores v, 
+                       tb_mayorista m
+				 WHERE c.id_cotizacion = ".$idCotizacion." 
+				   AND trim(c.mayorista) = trim(m.mayorista)";
+	   	$result = $this->db->query($sql);
+	   	return $result->result();
+	}
 
 	function getCanalMasUsado ($pais, $idUser) {	
 		if($pais == '') {
-			$sql = "SELECT COUNT(canal) AS cantidad_canal,
-						   canal AS no_canal, 
-						   no_vendedor, 
-						   pais, 
-						   SUM(monto) AS importe
+			$sql = "SELECT COUNT(compania) AS cantidad_compania,
+						   compania AS no_compania,
+						   no_contacto_mayo,
+						   pais,
+						   SUM(monto_final) AS importe
 					  FROM tb_cotizacion
-				  GROUP BY LOWER(canal)
-				  ORDER BY cantidad_canal DESC, importe DESC
+				  GROUP BY LOWER(compania)
+				  ORDER BY cantidad_compania DESC, importe DESC
 				  	 LIMIT 3";
 		} else {
-			$sql = "SELECT COUNT(canal) AS cantidad_canal,
-						   canal AS no_canal, 
-						   no_vendedor, 
-						   pais, 
-						   SUM(monto) AS importe
+			$sql = "SELECT COUNT(compania) AS cantidad_compania,
+						   compania AS no_compania,
+						   no_contacto_mayo,
+						   pais,
+						   SUM(monto_final) AS importe
 					  FROM tb_cotizacion
 					 WHERE pais LIKE '".$pais."'
-					   AND mayorista LIKE (SELECT m.mayorista 
+					   AND no_mayorista LIKE (SELECT m.mayorista 
 	                                         FROM tb_mayorista m, tb_vendedores v 
 	                                        WHERE v.id_vendedor = ".$idUser."
 	                                          AND v._id_mayorista = m.id_mayorista)
-				  GROUP BY LOWER(canal)
-				  ORDER BY cantidad_canal DESC, importe DESC
+				  GROUP BY LOWER(compania)
+				  ORDER BY cantidad_compania DESC, importe DESC
 				  	 LIMIT 3";
 		}
 		$result = $this->db->query($sql);
@@ -122,30 +116,28 @@ class M_Solicitud extends CI_Model {
 		if($pais == '') {
 			$sql = "SELECT id_cotizacion,
 						   email,
-					       no_vendedor,
-					       canal,
+					       no_contacto_mayo,
+					       compania,
 					       pais,
-					       date_format(fecha, '%d/%m/%Y') AS fecha,
-					       fecha as fecha2,
-					       documento,
-					       tipo_documento
+					       date_format(fecha_factura, '%d/%m/%Y') AS fecha,
+					       fecha_factura as fecha2,
+					       documento
 					  FROM tb_cotizacion
 				  ORDER BY fecha2 DESC
 					 LIMIT 10";
 		} else {
 			$sql = "SELECT id_cotizacion,
-						   email,
-					       no_vendedor,
-					       canal,
-					       pais,
-					       date_format(fecha, '%d/%m/%Y') AS fecha
+    					   email,
+    					   no_contacto_mayo,
+    					   compania,
+    					   pais,
+						   DATE_FORMAT(fecha_factura, '%d/%m/%Y') AS fecha
 					  FROM tb_cotizacion
 					 WHERE pais LIKE '".$pais."'
-					   AND tipo_documento = 1
-					   AND mayorista LIKE (SELECT m.mayorista 
-	                                          FROM tb_mayorista m, tb_vendedores v 
-	                                         WHERE v.id_vendedor = ".$idUser."
-	                                           AND v._id_mayorista = m.id_mayorista) 
+					   AND no_mayorista LIKE (SELECT m.mayorista 
+	                                       FROM tb_mayorista m, tb_vendedores v 
+	                                      WHERE v.id_vendedor = ".$idUser."
+	                                        AND v._id_mayorista = m.id_mayorista) 
 				  ORDER BY id_cotizacion DESC
 					 LIMIT 10";
 		}
@@ -180,23 +172,15 @@ class M_Solicitud extends CI_Model {
 		$result = $this->db->query($sql);
 		return $result->result();
 	}
-	// function getProductosById($id){
-	// 	$sql    = "SELECT * 
-	// 				 FROM tb_producto
-	// 				WHERE _id_cotizacion = ".$id."";
-	// 	$result = $this->db->query($sql);
-	// 	return $result->result();
-	// }
 	function getDatosReporte(){
 		$sql = "SELECT id_cotizacion,
 					   email,
-				       no_vendedor,
-				       canal,
+				       no_contacto_mayo,
+				       compania,
 				       pais,
-				       date_format(fecha, '%d/%m/%Y') AS fecha,
-				       fecha as fecha2,
-				       documento,
-				       tipo_documento
+				       date_format(fecha_factura, '%d/%m/%Y') AS fecha,
+				       fecha_factura as fecha2,
+				       documento
 				  FROM tb_cotizacion
 			  ORDER BY fecha2 DESC";
 		$result = $this->db->query($sql);

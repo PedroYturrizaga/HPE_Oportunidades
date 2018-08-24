@@ -40,8 +40,8 @@ class Champion extends CI_Controller{
             }
             foreach ($datos2 as $key) {
                 $html2 .= '<tr>
-                               <td>'.$key->canal.'</td>
-                               <td>'.$key->no_vendedor.'</td>
+                               <td>'.$key->compania.'</td>
+                               <td>'.$key->no_contacto_mayo.'</td>
                                <td>'.$key->pais.'</td>
                                <td>'.(($key->tipo_documento == 1) ? 'Cotización' : 'Facturazión' ).'</td>
                                <td>'.$key->fecha.'</td>
@@ -56,24 +56,14 @@ class Champion extends CI_Controller{
                              </tr>';
             }
             foreach ($datos3 as $key) {
-                $productos = $this->M_Solicitud->getProductosById($key->id_cotizacion);
-                $producto  = '';
-                foreach ($productos as $value) {
-                    if ($value->cantidad != 0){
-                        $producto .= $value->cantidad.' '.$value->no_producto.', ';
-                    };
-                }
-                $producto =substr($producto, 0, -2);
-                $producto .= '.';
-
                 $html3 .= '<tr>
-                               <td>'.$key->canal.'</td>
-                               <td>'.$key->no_vendedor.'</td>
+                               <td>'.$key->compania.'</td>
+                               <td>'.$key->no_contacto_mayo.'</td>
                                <td>'.$key->email.'</td>
                                <td>'.$key->pais.'</td>
-                               <td>'.(($key->tipo_documento == 1) ? 'Cotización' : 'Facturazión' ).'</td>
+                               <td></td>
                                <td>'.$key->fecha2.'</td>
-                               <td>'.$producto.'</td>
+                               <td></td>
                                <td>'.RUTA_ARCHIVOS.$key->documento.'</td>
                              </tr>';
             }
