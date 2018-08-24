@@ -243,6 +243,8 @@ function goToMenu(id){
 	idSection.removeClass('animated fadeOut');
 	idSection.addClass('animated fadeIn');
 	idLink.addClass('active');
+	if(id == 'cotizacion')
+		$('#ModalTipoPromo').modal('show');
 }
 function cerrarSesion(){
 	$.ajax({
@@ -294,3 +296,10 @@ function downloadCanvas(canvasId, filename) {
 $('#ingresar').click(function() {
     downloadCanvas('section-cotizacion', 'registro_de_oportunidad.png');
 });
+function goToPromocion(id){
+	$('#ModalTipoPromo').modal('hide');
+	var money = $('#'+id).attr('data-money');
+	var promo = $('#'+id).attr('data-promo');
+	$('#money').text(money);
+	$('#promocion').text(promo);
+}

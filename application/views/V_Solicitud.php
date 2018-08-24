@@ -56,7 +56,7 @@
             </section>
             <section id="section-cotizacion" class="js-section js-section--menu">
                 <div class="js-container">
-                    <h2 class="js-title">¡Gana 100 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en la promoci&oacute;n de Storage Accelerate!</h2>
+                    <h2 class="js-title">¡Gana <span id="money"></span> d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en la promoci&oacute;n de <span id="promocion"></span>!</h2>
                     <div class="col-xs-12 p-0">
                         <div class="col-sm-6 col-xs-12">
                             <div class="col-xs-12 js-input">
@@ -176,7 +176,7 @@
                     <div class="js-terminos">
                         <h3>Storage:</h3>
                         <ol>
-                            <li>100 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 20k en productos de esta promoci&oacute;n de Storage.</li>
+                            <li>100 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en productos de esta promoci&oacute;n de Storage.</li>
                             <li>No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
                             <li>Promoci&oacute;n v&aacute;lida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
                             <li>&Uacute;nicamente v&aacute;lido por compras realizadas a trav&eacute;s de mayoristas autorizados.</li>
@@ -219,24 +219,24 @@
         </div>
     </div>
     <div class="modal fade" id="ModalTipoPromo" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="modal-content">
-                    <div class="mdl-card">
-                        <div class="mdl-card__title">
-                            <h2>Bienvenido</h2>
-                        </div>
-                        <div class="mdl-card__supporting-text">
-                            <h3>Por favor seleccione una opción</h3>
-                            <p>Depende de la selección se le asignaran sus puntos</p>
-                        </div>
-                        <div class="mdl-card__actions">
-                            <a href="es/Home" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">SERVERS</a>
-                            <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-dismiss="modal">STORAGE</a>
-                        </div>
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="mdl-card">
+                    <div class="mdl-card__title">
+                        <h2>Bienvenido</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <h3>Por favor seleccione una opción</h3>
+                        <p>Depende de la selección se le asignaran sus puntos</p>
+                    </div>
+                    <div class="mdl-card__actions">
+                        <button id="promo1" data-money="100" data-promo="Storage Accelerate" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="goToPromocion(this.id)">STORAGE</button>
+                        <button id="promo2" data-money="50" data-promo="Promo Flex Attach" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="goToPromocion(this.id)">SERVERS</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     <form id="frmArchivo" method="post" style="display: none;">
         <input id="archivo" type="file" name="archivo" accept=".jpg,.pdf,.png"/>
         <input type="hidden" name="MAX_FILE_SIZE" value="2000000"/>
