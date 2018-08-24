@@ -182,7 +182,7 @@ label
 		color #000000
 		box-shadow 1px 2px 3px rgba(0,0,0,.2)
 	&.js-header--login
-		color #000000
+		color #FFFFFF
 		padding 35px
 .js-container
 	transitionMaxWidth()
@@ -192,12 +192,19 @@ label
 	margin auto
 	position relative
 	&.js-flex
-		justify-content flex-end
+		justify-content flex-start
 .js-fondo--login
 	absolute()
 	background url(../img/fondo/fondo-login.jpg) no-repeat center center
 	background-size cover
 	height 100vh
+	&:BEFORE
+		absolute()
+		content ''
+		background-color #000000
+		z-index 0
+		height 100vh
+		opacity .5
 .js-opacity-done
 	opacity 0
 	z-index -5
@@ -211,6 +218,7 @@ label
 		font-size 30px
 		line-height 30px
 		font-family $regular
+		color #FFFFFF
 .js-input
 	padding 7px 20px
 	height 72px
@@ -322,13 +330,14 @@ label
 	.js-middle--left
 		justify-content flex-start
 		width 100%
+		color #FFFFFF
 	.js-middle--right
 		justify-content flex-end
 		width 100%
 		font-size 18px
 		text-align right
 		a
-			color #000000
+			color #FFFFFF
 			text-decoration none
 			cursor pointer
 .js-terminos

@@ -10,7 +10,7 @@
     <meta name="date"                   content="June 1, 2018"/>
     <meta name="language"               content="es">
     <meta name="theme-color"            content="#000000">
-    <title>Registro de Cotizaciones HPE</title>
+    <title>Storage Accelerate Promo</title>
     <link rel="shortcut icon" href="<?php echo RUTA_IMG?>logo/favicon.ico">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>toaster/toastr.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-select/css/bootstrap-select.min.css?v=<?php echo time();?>">
@@ -31,7 +31,7 @@
             <img src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
         </div>
         <div class="js-header--right">
-            <p>Registro de Oportunidades</p>
+            <p>Storage Accelerate Promo</p>
             <a onclick="cerrarSesion()">Cerrar Sesi&oacute;n</a>
         </div>
     </div>

@@ -25,7 +25,7 @@
     <body>
         <div class="js-header js-header--login">
             <div class="js-header--left">
-                <img src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
+                <img src="<?php echo RUTA_IMG?>logo/hpe-logo.png">
             </div>
             <div class="js-header--right">
                 <p>Promoci&oacute;n Storage Accelerate</p>
