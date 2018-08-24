@@ -145,19 +145,11 @@
                             <table id="tbUltimosIngresos" class="table">
                                 <thead>
                                     <tr>
-                                        <th></th>
-                                        <th></th> 
-                                        <th></th>
-                                        <th class="text-center" colspan="2"> <strong>Puntaje</strong> </th> 
-                                        <th></th>  
-                                    </tr>
-                                    <tr>
                                         <th>Pais</th>
-                                        <th>Documento</th>
+                                        <th>Compa&ntilde;&iacute;a</th>
+                                        <th>Mayorista</th>
                                         <th>Fecha</th>
-                                        <th class="text-center">Cotizado</th>
-                                        <th class="text-center">Facturado</th>
-                                        <th>Total</th>
+                                        <th>Puntos</th>
                                     </tr>
                                 </thead >
                                 <tbody id="bodyPuntaje"><?php echo $html ?></tbody>

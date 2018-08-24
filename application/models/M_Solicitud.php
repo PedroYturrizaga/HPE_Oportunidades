@@ -37,14 +37,14 @@ class M_Solicitud extends CI_Model {
 	}
 
 	function getLastOrders($idUser) {
-		$sql="SELECT id_cotizacion, 
-	   				 pais,
-	   				 CASE WHEN(tipo_documento = 1) THEN 'Cotización' else 'Factura' end AS documento,
-	   				 fecha,
-			       	 SUM(puntos_cotizados) AS puntos_cotizados,
-			       	 SUM(puntos_cerrados) AS puntos_facturados,
-			       	 SUM(puntos_cerrados + puntos_cotizados) AS puntos_total
-			   	FROM tb_cotizacion 
+		$sql="SELECT id_cotizacion,
+					 pais,
+					 compania,
+					 no_mayorista,
+					 fecha_factura,
+					 puntos,
+					 SUM(`puntos`) AS puntos_total
+				FROM tb_cotizacion 
 			   WHERE _id_vendedor = ".$idUser."
  			GROUP BY id_cotizacion
 			ORDER BY id_cotizacion DESC
