@@ -9,15 +9,19 @@ function getDetails(cotizacion) {
 		try{
         	data = JSON.parse(data);
         	if(data.error == 0){
-        		$('#Nombre').val(data.detalles[0]['no_vendedor']);
+
+        		$('#Nombre').val(data.detalles[0]['Nombre']);
+				$('#compania').val(data.detalles[0]['compania']);
+        		$('#pais').val(data.detalles[0]['pais']);
         		$('#email').val(data.detalles[0]['email']);
+        		$('#telefono').val(data.detalles[0]['telefono']);
 				$('#noMayorista').html(data.option);
 				$('#noMayorista').selectpicker('render');
-        		$('#canal').val(data.detalles[0]['canal']);
-        		$('#pais').val(data.detalles[0]['pais']);
-        		$('#numFactura').val(data.detalles[0]['nu_cotizacion']);
-        		$('#fecha').val(data.detalles[0]['fecha']);
-        		$('#monto').val(data.detalles[0]['monto']);
+        		$('#monto').val(data.detalles[0]['monto_final']);
+        		$('#numFactura').val(data.detalles[0]['nu_factura']);
+        		$('#fecha').val(data.detalles[0]['fecha_factura']);
+				$('#NombrePersona').val(data.detalles[0]['no_contacto_mayo']);
+				$('#emailContacto').val(data.detalles[0]['email_contacto']);
         		$('#cotizacion').addClass('is-checked');
         		for (var i = 0; i < data.detalles.length; i++) {
         			if(data.detalles[i]['no_producto'] == "Windows Server Essentials Edition") {

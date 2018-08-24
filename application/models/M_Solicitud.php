@@ -27,9 +27,10 @@ class M_Solicitud extends CI_Model {
 	function getMayoristas($idVendedor) {
 		$sql = "SELECT v.id_vendedor,
 					   m.mayorista
-				  FROM tb_mayorista m, tb_vendedores v
+				  FROM tb_mayorista m, 
+				  	   tb_vendedores v
 				 WHERE v.id_vendedor = ".$idVendedor."
-                  AND m.id_mayorista = v._id_mayorista
+                   AND m.id_mayorista = v._id_mayorista
 			  GROUP BY mayorista
 			  ORDER BY mayorista ASC";
 		$result = $this->db->query($sql);
@@ -63,20 +64,23 @@ class M_Solicitud extends CI_Model {
 // 	PARA EL CHAMPION
 	function getDetallesCotizacion($idCotizacion) {
 		$sql = "SELECT c.email, 
+					   c.Nombre,
 					   c.no_contacto_mayo, 
+					   c.email_contacto,
 					   c.pais, 
 					   c.compania, 
-					   c.tipo_documento, 
-					   c.nu_cotizacion, 
-					   date_format(c.fecha, '%d/%m/%Y') AS fecha, 
-					   c.monto, 
+					   c.telefono, 
+					   c.nu_factura, 
+					   date_format(c.fecha_factura, '%d/%m/%Y') AS fecha, 
+					   c.monto_final, 
 					   m.mayorista, 
 					   c.documento
 				  FROM tb_cotizacion c, 
 				       tb_vendedores v, 
                        tb_mayorista m
 				 WHERE c.id_cotizacion = ".$idCotizacion." 
-				   AND trim(c.mayorista) = trim(m.mayorista)";
+				   AND trim(c.no_mayorista) = trim(m.mayorista)
+			  GROUP BY c.no_contacto_mayo";
 	   	$result = $this->db->query($sql);
 	   	return $result->result();
 	}
@@ -147,7 +151,7 @@ class M_Solicitud extends CI_Model {
 
 	function getDatosGraficosCanales(){
 		$sql = "SELECT pais, 
-					   SUM(monto) AS importe
+					   SUM(monto_final) AS importe
 				  FROM tb_cotizacion
 			  GROUP BY pais
 			  ORDER BY importe DESC";
@@ -157,7 +161,7 @@ class M_Solicitud extends CI_Model {
 
 	function getDatosGraficoCotiza() {
 		$sql = "SELECT pais, 
-					   SUM(puntos_cotizados+puntos_cerrados) AS puntos_entregados 
+					   SUM(monto_final) AS puntos_entregados 
 				  FROM tb_cotizacion
 			  GROUP BY pais 
 			  ORDER BY puntos_entregados DESC";

@@ -177,16 +177,20 @@ function limpiarCampos(){
 	$('#facturacion').removeClass('is-checked');
 	$('#cotizacion').removeClass('is-checked');
 	$('#Nombre').val(null);
-	$('#email').val(null);
-	$('#noMayorista').val(null);
 	$('#compania').val(null);
+	$('#pais').val(null);
+	$('#email').val(null);
+	$('#telefono').val(null);
+	$('#noMayorista').val(null);
+	$('#NombrePersona').val(null);
+	$('#emailContacto').val(null);
 	$('#numFactura').val(null);
 	$('#monto').val(null);
-	$('#pais').val(null);
 	$('.selectpicker').selectpicker('refresh');
 	$('#attach').val('0');
 	$('.selectpicker').selectpicker('refresh');
 	$('#fecha').val(null);
+
 }
 
 function soloLetras(e){

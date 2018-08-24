@@ -69,7 +69,8 @@ class Solicitud extends CI_Controller {
 			$puntos 		= $this->input->post('puntos');
 
 			$arrayInsertCotizacion = array('compania'   		=> $compania,
-										   '_id_endedor'   		=> $idVendedor,
+										   '_id_vendedor'   	=> $idVendedor,
+										   'Nombre'   			=> $nombreVendedor,
 										   'pais'		   		=> $pais,
 										   'email' 		   		=> $email,
 										   'telefono' 		   	=> $telefono,

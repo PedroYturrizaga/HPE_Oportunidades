@@ -32,8 +32,8 @@ class Champion extends CI_Controller{
             foreach ($datos as $key) {
                 $importe = round($key->importe * 100) / 100;
                 $html .= '<tr>
-                              <td>'.$key->no_canal.'</td>
-                              <td>'.$key->no_vendedor.'</td>
+                              <td>'.$key->no_compania.'</td>
+                              <td>'.$key->no_contacto_mayo.'</td>
                               <td>'.$key->pais.'</td>
                               <td class="text-right">'.$importe.'</td>
                           </tr>';
@@ -43,7 +43,7 @@ class Champion extends CI_Controller{
                                <td>'.$key->compania.'</td>
                                <td>'.$key->no_contacto_mayo.'</td>
                                <td>'.$key->pais.'</td>
-                               <td>'.(($key->tipo_documento == 1) ? 'Cotización' : 'Facturazión' ).'</td>
+                               <td></td>
                                <td>'.$key->fecha.'</td>
                                <td class="text-center">
                                    <button class="mdl-button mdl-js-button mdl-button--icon" onclick="getDetails('.$key->id_cotizacion.');">
