@@ -28,7 +28,7 @@
                 <img class="js-partner" src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
             </div>
             <div class="js-header--right">
-                <p>Registro de Oportunidades</p>
+                <p>Promoci&oacute;n Storage Accelerate</p>
             </div>
         </div>
         <section class="js-section js-height">

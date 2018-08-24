@@ -28,7 +28,7 @@
                 <img class="js-partner" src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
             </div>
             <div class="js-header--right">
-                <p>Registro de Oportunidades</p>
+                <p>Storage Accelerate Promo</p>
             </div>
         </div>
         <section class="js-section js-height">
@@ -37,11 +37,11 @@
                 <div class="js-login">
                     <h2>Acceso a la Herramienta</h2>
                     <div class="col-xs-12 js-input m-0">
-                        <label for="usuario">Usuario</label>
+                        <label for="usuario">User</label>
                         <input type="text" id="usuario" onkeyup="verificarDatos(event);">
                     </div>
                     <div class="col-xs-12 js-input m-0">
-                        <label for="password">Contrase&ntilde;a</label>
+                        <label for="password">Password</label>
                         <input type="password" id="password" onkeyup="verificarDatos(event);">
                     </div>
                     <div class="col-xs-12 p-0">
