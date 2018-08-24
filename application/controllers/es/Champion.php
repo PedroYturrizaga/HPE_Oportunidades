@@ -81,7 +81,7 @@ class Champion extends CI_Controller{
             $data['bodyCotizaciones'] = $html2;
             $data['bodyReporte'] = $html3;
             $data['pais'] = $pais;
-            $this->load->view('v_champion', $data);
+            $this->load->view('es/v_champion', $data);
         }
 	}
 

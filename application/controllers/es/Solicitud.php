@@ -45,7 +45,7 @@ class Solicitud extends CI_Controller {
 			$data['html'] = $html;
 			$data['pais'] = $pais;
 			$data['puntosGeneral'] = $puntosEngage;
-			$this->load->view('v_solicitud', $data);
+			$this->load->view('es/v_solicitud', $data);
         }
 	}
 
