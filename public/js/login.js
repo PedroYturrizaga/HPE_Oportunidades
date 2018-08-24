@@ -169,7 +169,14 @@ function recuperar() {
         }
     });
 }
-
+function cambiarIdioma(){
+    var idioma = $('#idioma').val();
+    if(idioma == 'Español'){
+        location.href = 'Es';
+    }else if(idioma == 'Inglés'){
+        location.href = 'En';
+    }
+}
 // POR CONFIRMAR SI SE USARÁ
 
 // function cambiar() {

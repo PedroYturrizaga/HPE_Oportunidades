@@ -29,6 +29,12 @@
             </div>
             <div class="js-header--right">
                 <p>Promoci&oacute;n Storage Accelerate</p>
+                <div class="js-idioma">
+                    <select class="selectpicker" id="idioma"  name="idioma" onchange="cambiarIdioma()">
+                        <option value="Español">Espa&ntilde;ol</option>
+                        <option value="Inglés">English</option>
+                    </select>
+                </div>
             </div>
         </div>
         <section class="js-section js-height">
@@ -130,19 +136,19 @@
                 $('select').selectpicker();
             }
             $(document).ready(function(){
-            let CHECK = sessionStorage.getItem('CHECK');
-            let USERNAME = sessionStorage.getItem('USERNAME');
-            let PASS = sessionStorage.getItem('PASS');
-           if(CHECK == 1) {
-                $('#remember').prop('checked', true);
-                $('#usuario').val(USERNAME);
-                $('#password').val(PASS);
-           }else {
-                $('#remember').prop('checked', false);
-                $('#usuario').val('');
-                $('#password').val('');
-           }
-        });
+                let CHECK = sessionStorage.getItem('CHECK');
+                let USERNAME = sessionStorage.getItem('USERNAME');
+                let PASS = sessionStorage.getItem('PASS');
+                if(CHECK == 1) {
+                    $('#remember').prop('checked', true);
+                    $('#usuario').val(USERNAME);
+                    $('#password').val(PASS);
+                }else {
+                    $('#remember').prop('checked', false);
+                    $('#usuario').val('');
+                    $('#password').val('');
+                }
+            });
         </script>
     </body>
 </html>

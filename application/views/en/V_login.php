@@ -29,6 +29,12 @@
             </div>
             <div class="js-header--right">
                 <p>Storage Accelerate Promo</p>
+                <div class="js-idioma">
+                    <select class="selectpicker" id="idioma"  name="idioma" onchange="cambiarIdioma()">
+                        <option value="Inglés">English</option>
+                        <option value="Español">Espa&ntilde;ol</option>
+                    </select>
+                </div>
             </div>
         </div>
         <section class="js-section js-height">
