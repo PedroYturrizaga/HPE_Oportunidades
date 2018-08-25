@@ -172,9 +172,9 @@ function recuperar() {
 function cambiarIdioma(){
     var idioma = $('#idioma').val();
     if(idioma == 'Español'){
-        location.href = 'Es';
+        location.href = 'http://www.marketinghpe.com/promostorageq4/rla/es/';
     }else if(idioma == 'Inglés'){
-        location.href = 'En';
+        location.href = 'http://www.marketinghpe.com/promostorageq4/rla/en/';
     }
 }
 // POR CONFIRMAR SI SE USARÁ

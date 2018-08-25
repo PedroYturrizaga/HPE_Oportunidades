@@ -10,7 +10,7 @@
     <meta name="date"                   content="June 1, 2018"/>
     <meta name="language"               content="es">
     <meta name="theme-color"            content="#000000">
-    <title>Storage Accelerate Promo</title>
+    <title>Promo Storage Accelerate / Promo Flex Attach Servers</title>
     <link rel="shortcut icon" href="<?php echo RUTA_IMG?>logo/favicon.ico">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>toaster/toastr.min.css?v=<?php echo time();?>">
     <link rel="stylesheet"    href="<?php echo RUTA_PLUGINS?>bootstrap-select/css/bootstrap-select.min.css?v=<?php echo time();?>">
@@ -31,7 +31,7 @@
             <img src="<?php echo RUTA_IMG?>logo/hpe-logo.svg">
         </div>
         <div class="js-header--right">
-            <p>Storage Accelerate Promo</p>
+            <p>Promo Storage Accelerate / Promo Flex Attach Servers</p>
             <a onclick="cerrarSesion()">Cerrar Sesi&oacute;n</a>
         </div>
     </div>
@@ -57,6 +57,7 @@
             <section id="section-cotizacion" class="js-section js-section--menu">
                 <div class="js-container">
                     <h2 class="js-title">¡Gana <span id="money"></span> d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en la promoci&oacute;n de <span id="promocion"></span>!</h2>
+                    <p class="js-subtitle">Si ya cerraste un proyecto usando esta promoci&oacute;n y tu mayorista te facturo entre el 1 de Septiembre y el 31 de Octubre de 2018, llena la siguiente informacion para solicitar tus puntos de Engage & Grow:</p>
                     <div class="col-xs-12 p-0">
                         <div class="col-sm-6 col-xs-12">
                             <div class="col-xs-12 js-input">
@@ -166,7 +167,7 @@
                 <div class="js-container">
                     <h2 class="js-title">T&eacute;rminos y condiciones</h2>
                     <div class="js-terminos">
-                        <h3>Storage:</h3>
+                        <h3>Promo Storage Accelerate</h3>
                         <ol>
                             <li>100 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en productos de esta promoci&oacute;n de Storage.</li>
                             <li>No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
@@ -175,7 +176,7 @@
                             <li>Los puntos ser&aacute;n acreditados en la cuenta de Engage & Grow m&aacute;ximo el 15 de Noviembre, 2018</li>
                             <li>HPE se reserva el derecho de modificar estos T&eacute;rminos y Condiciones, cambiar, reestructurar o descontinuar este incentivo en cualquier  momento sin previo aviso a los participantes.</li>
                         </ol>
-                        <h3>Servers:</h3>
+                        <h3>Promo Flex Attach Servers</h3>
                         <ol>
                             <li>50 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a 15k en la Promo flex Attach de Servidores.</li>
                             <li>No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>

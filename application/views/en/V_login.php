@@ -28,7 +28,6 @@
                 <img src="<?php echo RUTA_IMG?>logo/hpe-logo.png">
             </div>
             <div class="js-header--right">
-                <p>Storage Accelerate Promo</p>
                 <div class="js-idioma">
                     <select class="selectpicker" id="idioma"  name="idioma" onchange="cambiarIdioma()">
                         <option value="Inglés">English</option>
@@ -41,7 +40,8 @@
             <div class="js-fondo--login"></div>
             <div class="js-container js-flex">
                 <div class="js-login">
-                    <h2>Access to the Tool</h2>
+                    <h1>Promo Storage Accelerate / Promo Flex Attach Servers</h1>
+                    <h2>Register your sales here.</h2>
                     <div class="col-xs-12 js-input m-0">
                         <label for="usuario">User</label>
                         <input type="text" id="usuario" onkeyup="verificarDatos(event);">
