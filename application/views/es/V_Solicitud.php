@@ -201,8 +201,7 @@
                     </div>
                     <div class="mdl-card__supporting-text p-t-0 p-b-0">
                         <h3>Tu registro ha sido enviado satisfactoriamente.</h3>
-                        <p>Nos pondremos en contacto contigo a la brevedad</p>
-                        <small>Team HPE - Microsoft</small>
+                        <small>Team HPE RLA</small>
                     </div> 
                     <div class="mdl-card__actions">                         
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" data-dismiss="modal">Aceptar</button> 
