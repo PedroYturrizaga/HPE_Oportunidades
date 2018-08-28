@@ -72,19 +72,23 @@ class Login extends CI_Controller {
             $email    = $this->input->post('email');
             $pass     = $this->input->post('pass');
             $passRep  = $this->input->post('passRep');
-
-            if($pass == $passRep) {
-                $arrayInsert = array('no_vendedor' => $nombres,
-                                     'usuario'     => $email,
-                                     'pass'        => $pass,
-                                     'id_rol'      => '1',
-                                     'pais'        => $pais,
-                                     'region'      => $region,
-                                     'compania'    => $compania );
-                $this->M_Login->insertarUsuario($arrayInsert, 'tb_vendedores');
-                $data['error'] = EXIT_SUCCESS;
+            $verifica = $this->M_Login->verificaUsuario($email);
+            if (sizeof($verifica) == 0) {
+                if($pass == $passRep) {
+                    $arrayInsert = array('no_vendedor' => $nombres,
+                                         'usuario'     => $email,
+                                         'pass'        => $pass,
+                                         'id_rol'      => '1',
+                                         'pais'        => $pais,
+                                         'region'      => $region,
+                                         'compania'    => $compania );
+                    $this->M_Login->insertarUsuario($arrayInsert, 'tb_vendedores');
+                    $data['error'] = EXIT_SUCCESS;
+                } else {
+                    $data['msj'] = 'Las contraseñas no coinciden.';
+                }
             } else {
-                $data['msj'] = 'Las contraseñas no coinciden.';
+                $data['msj'] = 'Usuario ya registrado';
             }
         } catch (Exception $ex) {
             $data['msj'] = $ex->getMessage();
