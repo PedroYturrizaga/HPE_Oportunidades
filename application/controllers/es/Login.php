@@ -61,34 +61,36 @@ class Login extends CI_Controller {
         echo json_encode($data);
     }
 
-//POR CONFIRMAR SI SE USARÁ
-    // function registrarUsuario () {
-    //     $data['error'] = EXIT_ERROR;
-    //     $data['msj']   = null;
-    //     try {
-    //         $nombre    = $this->input->post('nombre');
-    //         $apellidos = $this->input->post('apellidos');
-    //         $canal     = $this->input->post('canal');
-    //         $pais      = $this->input->post('pais');
-    //         $email     = $this->input->post('email');
-    //         $movil     = $this->input->post('movil');
-    //         $pass      = $this->input->post('pass');
+    function registrarUsuario () {
+        $data['error'] = EXIT_ERROR;
+        $data['msj']   = null;
+        try {
+            $nombres  = $this->input->post('nombres');
+            $compania = $this->input->post('compania');
+            $pais     = $this->input->post('pais');
+            $region   = $this->input->post('region');
+            $email    = $this->input->post('email');
+            $pass     = $this->input->post('pass');
+            $passRep  = $this->input->post('passRep');
 
-    //         $arrayInsert = array('no_vendedor'   => $nombreVendedor,
-    //                              'email'         => $email,
-    //                              'fecha'         => $fecha,
-    //                              'canal'         => $canal,
-    //                              '_id_mayorista' => $idMayorista,
-    //                              'tipo_documento'=> $tipoDoc,
-    //                              'pais'          => $pais,
-    //                              'nu_cotizacion' => $numFactura,
-    //                              'monto'         => $monto,
-    //                              $columnaFinal   => $puntos );
-    //     } catch (Exception $ex) {
-    //         $data['msj'] = $ex->getMessage();
-    //     }
-    //     echo json_encode($data);
-    // }
+            if($pass == $passRep) {
+                $arrayInsert = array('no_vendedor' => $nombres,
+                                     'usuario'     => $email,
+                                     'pass'        => $pass,
+                                     'id_rol'      => '1',
+                                     'pais'        => $pais,
+                                     'region'      => $region,
+                                     'compania'    => $compania );
+                $this->M_Login->insertarUsuario($arrayInsert, 'tb_vendedores');
+                $data['error'] = EXIT_SUCCESS;
+            } else {
+                $data['msj'] = 'Las contraseñas no coinciden.';
+            }
+        } catch (Exception $ex) {
+            $data['msj'] = $ex->getMessage();
+        }
+        echo json_encode($data);
+    }
 
     function sendGmail(){
         $data['error'] = EXIT_ERROR;

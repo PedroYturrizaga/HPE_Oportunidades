@@ -30,7 +30,7 @@ class M_Solicitud extends CI_Model {
 				  FROM tb_mayorista m, 
 				  	   tb_vendedores v
 				 WHERE v.id_vendedor = ".$idVendedor."
-                   AND m.id_mayorista = v._id_mayorista
+                   AND m.pais = v.region
 			  GROUP BY mayorista
 			  ORDER BY mayorista ASC";
 		$result = $this->db->query($sql);
@@ -105,9 +105,9 @@ class M_Solicitud extends CI_Model {
 					  FROM tb_cotizacion
 					 WHERE pais LIKE '".$pais."'
 					   AND no_mayorista LIKE (SELECT m.mayorista 
-	                                         FROM tb_mayorista m, tb_vendedores v 
-	                                        WHERE v.id_vendedor = ".$idUser."
-	                                          AND v._id_mayorista = m.id_mayorista)
+	                                            FROM tb_mayorista m, tb_vendedores v 
+	                                           WHERE v.id_vendedor = ".$idUser."
+	                                             AND v.region = m.pais)
 				  GROUP BY LOWER(compania)
 				  ORDER BY cantidad_compania DESC, importe DESC
 				  	 LIMIT 3";
@@ -139,9 +139,9 @@ class M_Solicitud extends CI_Model {
 					  FROM tb_cotizacion
 					 WHERE pais LIKE '".$pais."'
 					   AND no_mayorista LIKE (SELECT m.mayorista 
-	                                       FROM tb_mayorista m, tb_vendedores v 
-	                                      WHERE v.id_vendedor = ".$idUser."
-	                                        AND v._id_mayorista = m.id_mayorista) 
+	                                            FROM tb_mayorista m, tb_vendedores v 
+	                                           WHERE v.id_vendedor = ".$idUser."
+	                                             AND v.region = m.pais) 
 				  ORDER BY id_cotizacion DESC
 					 LIMIT 10";
 		}

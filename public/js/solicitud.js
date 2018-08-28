@@ -7,7 +7,6 @@ $( window ).load(function(){
 	$("#ModalTipoPromo").modal('show');
 });
 
-var seleccion = null;
 function registrar() {
 	var Nombre 			= $('#Nombre').val();
 	var compania 		= $('#compania').val();
@@ -28,71 +27,111 @@ function registrar() {
 	var cuentaActiva	= null;
 	var puntos      	= money;
 
-	seleccion    = (cotizacion == true) ? 'cotizacion' : 'factura';
 	factura = $('#archivo')[0].files[0];
 	if(factura == undefined){
+		toastr.remove()
 		msj('error', 'Seleccione una factura');
 		return;
 	}
 	if(factura['size'] > 2048000){
 		return;
 	}
-	
-	if(Nombre == '' && email == '' && noMayorista == '' && compania == '' && numFactura == '' && monto == '' && fecha == '' ){
-		validarCampos();
-	}
+
 	if(Nombre == null || Nombre == ''){
 		$('#Nombre').css('border-color','red');
+		toastr.remove()
 		msj('error', 'Ingrese su nombre');
 		return;
 	}
+	if(compania == null || compania == ''){
+		toastr.remove()
+		msj('error', 'Ingrese su compañia');
+		$('#compania').css('border-color','red');
+		return;
+	}
+	if(pais == null || pais == '') {
+		toastr.remove()
+		msj('error', 'Ingrese un pais');
+		$('#pais').css('border-color','red');
+		return;		
+	}
 	if(email == null || email == ''){
+		toastr.remove()
 		msj('error', 'Ingrese su email');
 		$('#email').css('border-color','red');
 		return;
 	}
 	if (!validateEmail(email)){
+		toastr.remove()
 		msj('error', 'El formato de email ingresado es incorrecto');
 		$('#email').css('border-color','red');
 		return;
 	}else {
 		$('#email').css('border-color','#C6C9CA');
 	}
+	if(telefono == null || telefono == ''){
+		toastr.remove()
+		msj('error', 'Ingrese su telefono');
+		$('#telefono').css('border-color','red');
+		return;
+	}
 	if(noMayorista == null || noMayorista == ''){
+		toastr.remove()
 		msj('error', 'seleccione el nombre del mayorista');
 		$('#noMayorista').css('border-color','red');
 		return;
 	}
-	if(compania == null || compania == ''){
-		msj('error', 'Ingrese su compañia');
-		$('#compania').css('border-color','red');
+	if(NombrePersona == null || NombrePersona == ''){
+		toastr.remove()
+		msj('error', 'Ingrese el nombre de la persona te atendió dentro del mayorista');
+		$('#NombrePersona').css('border-color','red');
 		return;
 	}
+	if(emailContacto == null || emailContacto == ''){
+		toastr.remove()
+		msj('error', 'Ingrese el email de la persona te atendió dentro del mayorista');
+		$('#emailContacto').css('border-color','red');
+		return;
+	}
+	if (!validateEmail(emailContacto)){
+		toastr.remove()
+		msj('error', 'El formato del email ingresado es incorrecto');
+		$('#emailContacto').css('border-color','red');
+		return;
+	}else {
+		$('#emailContacto').css('border-color','#C6C9CA');
+	}
 	if(numFactura == null || numFactura == ''){
+		toastr.remove()
 		msj('error', 'Ingrese su número de Factura');
 		$('#numFactura').css('border-color','red');
 		return;
 	}
-	if(monto == null || monto == ''){
-		msj('error', 'Ingrese el nombre del cliente');
-		$('#cliente').css('border-color','red');
-		return;
-	}
 	if(fecha == null || fecha == ''){
-		msj('error', 'Ingrese la fecha de cierre');
+		toastr.remove()
+		msj('error', 'Ingrese la fecha de facturaci&oacute;n');
 		$('#fecha').css('border-color','red');
 		return;
 	}
-	if(pais == null || pais == '') {
-		msj('error', 'Ingrese un pais');
-		$('#pais').css('border-color','red');
-		return;		
+	if(monto == null || monto == ''){
+		toastr.remove()
+		msj('error', 'Ingrese el monto');
+		$('#cliente').css('border-color','red');
+		return;
+	}
+	if(Nombre == '' && email == '' && noMayorista == '' && compania == '' && numFactura == '' && monto == '' && fecha == '' ){
+		validarCampos();
 	}
 	if(facturacion == true){
 		cuentaActiva = 0;
 	}
 	if(cotizacion == true){
 		cuentaActiva = 1;
+	}
+	if(cuentaActiva == null){
+		toastr.remove()
+		msj('error', 'Seleccione si tiene una cuenta activa.');
+		return;
 	}
 	$.ajax({
 		data  : { Nombre 		: Nombre,
@@ -119,9 +158,10 @@ function registrar() {
         		$('#puntajeGeneral').html(data.puntosGeneral);
         		$('#bodyUltimaCotizacion').html(data.bodyCotizaciones);
         		$('#bodyCanales').html(data.bodyCanales);
-        		setTimeout(500,limpiarCampos());
+        		setTimeout(1000,limpiarCampos());
         	} else { return; }
       } catch (err){
+      	toastr.remove()
         msj('error',err.message);
       }
 	});
@@ -140,12 +180,14 @@ $("#archivo").change(function(e) {
 function agregarDatos(){
 	var datos = new FormData();
 	factura = $('#archivo')[0].files[0];
-	if(factura['size'] > 2048000){
-		msj('error', 'La factura debe ser menor a 2MB');
+	if(factura == undefined){
+		toastr.remove()
+		msj('error', 'Seleccione una factura');
 		return;
 	}
-	if(factura == undefined){
-		msj('error', 'Seleccione una factura');
+	if(factura['size'] > 2048000){
+		toastr.remove()
+		msj('error', 'La factura debe ser menor a 2MB');
 		return;
 	}
     datos.append('archivo',$('#archivo')[0].files[0]);
@@ -165,9 +207,9 @@ function agregarDatos(){
         		$('#puntajeGeneral').html(respuesta.puntosGeneral);
         		$('#bodyUltimaCotizacion').html(respuesta.bodyCotizaciones);
         		$('#bodyCanales').html(respuesta.bodyCanales);
-        		limpiarCampos();
 			}, 250);
       	} else {
+      		toastr.remove()
         	msj('error', respuesta.mensaje);
       	}
     });
@@ -267,6 +309,7 @@ function cerrarSesion(){
         	return;
         }
       }catch(err){
+      	toastr.remove()
         msj('error',err.message);
       }
 	});

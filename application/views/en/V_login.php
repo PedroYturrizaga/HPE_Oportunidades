@@ -68,6 +68,47 @@
             </div>
         </section>
 
+        <!--MODAL REGISTRAR NUEVO USUARIO -->
+        <div class="modal fade" id="registroUsuario" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-md text-center">
+                <div class="modal-content">
+                    <div class="mdl-card">
+                        <div class="mdl-card__supporting-text">
+                            <h2>REGISTRAR USUARIO</h2>
+                            <div class="form-group col-xs-12 p-0">
+                                <input type="text" class="form-control" id="nombres" placeholder="Nombres y Apellidos" onchange="validarCampos()">
+                            </div>
+                            <div class="form-group col-xs-12 p-0">
+                                <input type="text" class="form-control" id="compania" placeholder="Compa&ntilde;&iacute;a" onchange="validarCampos()">
+                            </div>
+                            <div class="form-group col-xs-12 p-0">
+                                <select class="selectpicker" id="region" title="Regi&oacute;n">
+                                    <option value="Caribe">Caribe</option>
+                                    <option value="Centro américa">Centro Am&eacute;rica</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-xs-12 p-0">
+                                <input type="text" class="form-control" id="pais" placeholder="Pais" onchange="validarCampos()">
+                            </div>
+                            <div class="form-group col-xs-12 p-0">
+                                <input type="text" class="form-control" id="email" placeholder="Email" onchange="validarCampos()">
+                            </div>
+                            <div class="form-group col-xs-12 p-0">
+                                <input type="password" class="form-control" id="pass" placeholder="Contrase&ntilde;a" onchange="validarCampos()">
+                            </div>
+                            <div class="form-group col-xs-12 p-0">
+                                <input type="password" class="form-control" id="passRep" placeholder="Repetir contrase&ntilde;a" onchange="validarCampos()">
+                            </div>
+                        </div> 
+                        <div class="mdl-card__actions">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-dismiss="modal">Cancelar</button>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button " onclick="registrar()">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- MODAL RECUPERAR CONTRASEÑA -->
         <div class="modal fade" id="recuperaContrasena" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-sm">
