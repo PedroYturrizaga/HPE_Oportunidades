@@ -219,7 +219,7 @@
                     </div>
                     <div class="mdl-card__supporting-text">
                         <h3>Por favor seleccione una opción</h3>
-                        <p>Depende de la selección se le asignaran sus puntos</p>
+                        <p>Seg&uacute;n su selección se le asignaran los puntos</p>
                     </div>
                     <div class="mdl-card__actions">
                         <button id="promo1" data-money="100" data-promo="Storage Accelerate" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="goToPromocion(this.id)">STORAGE</button>
