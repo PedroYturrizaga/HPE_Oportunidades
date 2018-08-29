@@ -37,9 +37,11 @@ class Login extends CI_Controller {
                         $data['rol'] = $username[0]->id_rol;
                         $data['error'] = EXIT_SUCCESS;
                     }else {
-                        $data['pass'] = 'Contraseña incorrecta';
+                        $data['msj'] = 'Contraseña incorrecta';
                     }
                 }
+            } else {
+                $data['msj'] = 'Usuario no registrado';
             }
         }catch(Exception $e) {
            $data['msj'] = $e->getMessage();
@@ -84,6 +86,7 @@ class Login extends CI_Controller {
                                          'compania'    => $compania );
                     $this->M_Login->insertarUsuario($arrayInsert, 'tb_vendedores');
                     $data['error'] = EXIT_SUCCESS;
+                    $data['msj'] = '¡Registro exitoso!';
                 } else {
                     $data['msj'] = 'Las contraseñas no coinciden.';
                 }
@@ -174,6 +177,7 @@ class Login extends CI_Controller {
                 $this->email->message($texto);
                 $this->email->send();
                 $data['error'] = EXIT_SUCCESS;
+                $data['msj']   = 'Revisar su bandeja de entrada';
             }
         }catch (Exception $e){
             $data['msj'] = $e->getMessage();

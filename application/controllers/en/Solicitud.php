@@ -19,7 +19,10 @@ class Solicitud extends CI_Controller {
             header("location: Login");
         } else {
         	$nombre = $this->M_Login->verificaUsuario( $this->session->userdata('usuario') );
-			$data['nombre'] = $nombre[0]->no_vendedor;
+			$data['nombre']   = $nombre[0]->no_vendedor;
+			$data['compania'] = $nombre[0]->compania;
+			$data['pais']     = $nombre[0]->pais;
+			$data['email']    = $nombre[0]->usuario;
 			$pais   = $this->session->userdata('pais');
 			$idUser = $this->session->userdata('Id_user');
 	        $datos  = $this->M_Solicitud->getMayoristas($idUser);
@@ -42,9 +45,8 @@ class Solicitud extends CI_Controller {
 	          	$puntosEngage += $key->puntos_total;
 			}
 			$data['html'] = $html;
-			$data['pais'] = $pais;
 			$data['puntosGeneral'] = $puntosEngage;
-			$this->load->view('en/v_solicitud', $data);
+			$this->load->view('es/v_solicitud', $data);
         }
 	}
 
@@ -69,6 +71,8 @@ class Solicitud extends CI_Controller {
 			$puntos 		= $this->input->post('puntos');
 
 			$arrayInsertCotizacion = array('compania'   		=> $compania,
+										   '_id_vendedor'   	=> $idVendedor,
+										   'Nombre'   			=> $nombreVendedor,
 										   'pais'		   		=> $pais,
 										   'email' 		   		=> $email,
 										   'telefono' 		   	=> $telefono,
