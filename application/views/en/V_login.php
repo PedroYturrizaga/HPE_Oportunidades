@@ -50,18 +50,21 @@
                         <label for="password">Password</label>
                         <input type="password" id="password" onkeyup="verificarDatos(event);">
                     </div>
+                    <div class="col-xs-12 js-checkbox">
+                        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember">
+                            <input type="checkbox" id="remember" class="mdl-checkbox__input">
+                            <span class="mdl-checkbox__label">Remember</span>
+                        </label>
+                    </div>
                     <div class="col-xs-12 p-0">
                         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--login" onclick="ingresar()">Login</button>
                     </div>
                     <div class="col-xs-12 js-middle">
                         <div class="js-middle--left">
-                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember">
-                                <input type="checkbox" id="remember" class="mdl-checkbox__input">
-                                <span class="mdl-checkbox__label">Remember me</span>
-                            </label>
+                            <a onclick="openModalRecuperar()">Forgot my password?</a>
                         </div>
                         <div class="js-middle--right">
-                            <a onclick="openModalRecuperar()">Forgot my password?</a>
+                            <a onclick="openModalCrear()">Create account</a>
                         </div>
                     </div>
                 </div>
@@ -70,39 +73,47 @@
 
         <!--MODAL REGISTRAR NUEVO USUARIO -->
         <div class="modal fade" id="registroUsuario" tabindex="-1" role="dialog" aria-labelledby="simpleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-            <div class="modal-dialog modal-md text-center">
+            <div class="modal-dialog modal-md">
                 <div class="modal-content">
                     <div class="mdl-card">
-                        <div class="mdl-card__supporting-text">
-                            <h2>REGISTRAR USUARIO</h2>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="text" class="form-control" id="nombres" placeholder="Nombres y Apellidos" onchange="validarCampos()">
+                        <div class="mdl-card__title p-b-0">
+                            <h2>Crear Acceso</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text p-t-0">
+                            <div class="col-xs-12 js-input">
+                                <label for="nombres">Full Name</label>
+                                <input type="text" id="nombres" onchange="validarCampos()">
                             </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="text" class="form-control" id="compania" placeholder="Compa&ntilde;&iacute;a" onchange="validarCampos()">
+                            <div class="col-xs-12 js-input">
+                                <label for="compania">Company</label>
+                                <input type="text" id="compania" onchange="validarCampos()">
                             </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <select class="selectpicker" id="region" title="Regi&oacute;n">
+                            <div class="col-xs-12 js-input js-select">
+                                <select class="selectpicker" title="Seleccione su región" id="region" title="Regi&oacute;n">
                                     <option value="Caribe">Caribe</option>
                                     <option value="Centro américa">Centro Am&eacute;rica</option>
                                 </select>
                             </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="text" class="form-control" id="pais" placeholder="Pais" onchange="validarCampos()">
+                            <div class="col-xs-12 js-input">
+                                <label for="pais">Country</label>
+                                <input type="text" id="pais" onchange="validarCampos()">
                             </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="text" class="form-control" id="email" placeholder="Email" onchange="validarCampos()">
+                            <div class="col-xs-12 js-input">
+                                <label for="email">Email</label>
+                                <input type="text" id="email" onchange="validarCampos()">
                             </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="password" class="form-control" id="pass" placeholder="Contrase&ntilde;a" onchange="validarCampos()">
+                            <div class="col-xs-12 js-input">
+                                <label for="pass">Password</label>
+                                <input type="password" id="pass" onchange="validarCampos()">
                             </div>
-                            <div class="form-group col-xs-12 p-0">
-                                <input type="password" class="form-control" id="passRep" placeholder="Repetir contrase&ntilde;a" onchange="validarCampos()">
+                            <div class="col-xs-12 js-input">
+                                <label for="passRep">Confirm Password</label>
+                                <input type="password" id="passRep" onchange="validarCampos()">
                             </div>
                         </div> 
                         <div class="mdl-card__actions">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" data-dismiss="modal">Cancelar</button>
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button " onclick="registrar()">Aceptar</button>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--default" data-dismiss="modal">Cancel</button>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button " onclick="registrar()">Accept</button>
                         </div>
                     </div>
                 </div>
