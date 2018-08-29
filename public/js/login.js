@@ -268,6 +268,8 @@ function registrar() {
         try {
             if(data.error == 0) {
                 abrirCerrarModal('registroUsuario');
+                toastr.remove();
+                msj('success',data.msj);
             } else { 
                 toastr.remove();
                 msj('error',data.msj);

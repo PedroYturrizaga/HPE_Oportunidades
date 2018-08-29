@@ -86,6 +86,7 @@ class Login extends CI_Controller {
                                          'compania'    => $compania );
                     $this->M_Login->insertarUsuario($arrayInsert, 'tb_vendedores');
                     $data['error'] = EXIT_SUCCESS;
+                    $data['msj'] = '¡Registro exitoso!';
                 } else {
                     $data['msj'] = 'Las contraseñas no coinciden.';
                 }
