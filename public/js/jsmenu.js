@@ -123,3 +123,40 @@ function initButtonCalendarDaysRange(idButton, minDate, maxDate) {
 	var valueNewInput = $("#"+newInput).val();
 	id.text(valueNewInput);
 }
+
+function initCalendar(id, currentDate){
+	var startDate = new Date();
+	 if (currentDate != undefined) {
+            var startDate = new Date(currentDate);
+        }
+	$("#"+id).bootstrapMaterialDatePicker({ 
+		weekStart : 0, 
+		date	: true, 
+		time	: false, 
+		format 	: 'DD/MM/YYYY',
+		currentDate : startDate
+	});
+}
+function initButtonCalendar(idButton, currentDate, fecha) {
+	var text 		= idButton;
+	var id 			= $("#"+text);
+	var newInput	= null;
+	var iconButton 	= id.closest('.js-input').find('.js-icon');
+	iconButton.find('.mdl-button').click(function(){
+		newInput = text+'ForCalendar';
+		if ( $('#'+newInput).length < 1 ) {
+			$('<input>').attr({
+			    type		: 'text',
+			    id			: newInput,
+			    name		: newInput,
+			    'data-time'	: text,
+			    onchange 	: 'clonarFecha($(this))',
+			    style		: 'position: absolute; top: 40px; border: transparent; color: transparent; z-index: -4'
+			}).appendTo(iconButton);
+			initCalendar(newInput, currentDate);
+		}
+		$("#"+newInput).focus();			
+	});		
+	var valueNewInput = $("#"+newInput).val();   
+	id.text(valueNewInput);
+}

@@ -39,7 +39,7 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">¿Qu&eacute; deseas hacer&#63;</span>
             <nav class="mdl-navigation">
-                <a id="cotizacion" class="mdl-navigation__link active" onclick="goToMenu(this.id)">Ingresar una nueva cotizaci&oacute;n</a>
+                <a id="cotizacion" class="mdl-navigation__link active" onclick="goToMenu(this.id)">Ingresar una venta</a>
                 <a id="puntaje" class="mdl-navigation__link" onclick="goToMenu(this.id)">Ver puntaje acumulado</a>
                 <a id="terminos" class="mdl-navigation__link" onclick="goToMenu(this.id)">T&eacute;rminos y Condiciones</a>
             </nav>
@@ -262,7 +262,7 @@
         $('#compania').val(compania);
         $('#pais').val(pais);
         $('#email').val(email);
-        initButtonCalendarDaysMaxToday('fecha');
+        initButtonCalendar('fecha');
         initMaskInputs('fecha');
     </script>
 </body>
