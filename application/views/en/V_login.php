@@ -77,7 +77,7 @@
                 <div class="modal-content">
                     <div class="mdl-card">
                         <div class="mdl-card__title p-b-0">
-                            <h2>Crear Acceso</h2>
+                            <h2>Create account</h2>
                         </div>
                         <div class="mdl-card__supporting-text p-t-0">
                             <div class="col-xs-12 js-input">
@@ -89,9 +89,9 @@
                                 <input type="text" id="compania" onchange="validarCampos()">
                             </div>
                             <div class="col-xs-12 js-input js-select">
-                                <select class="selectpicker" title="Seleccione su región" id="region" title="Regi&oacute;n">
+                                <select class="selectpicker" title="Select your region" id="region" title="Regi&oacute;n">
                                     <option value="Caribe">Caribe</option>
-                                    <option value="Centro américa">Centro Am&eacute;rica</option>
+                                    <option value="Centro américa">Centro America</option>
                                 </select>
                             </div>
                             <div class="col-xs-12 js-input">
@@ -126,18 +126,18 @@
                 <div class="modal-content">
                     <div class="mdl-card">
                         <div class="mdl-card__title">
-                            <h2>Recuperar Contrase&ntilde;a</h2>
-                            <p>Comp&aacute;rtenos tu correo y en breve te enviaremos un correo con tu contrase&ntilde;a</p>
+                            <h2>Recover password</h2>
+                            <p>Share your email with us and we will send you an email with your password shortly</p>
                         </div>
                         <div class="mdl-card__supporting-text">
                             <div class="col-xs-12 js-input">
-                                <label for="usuarioRecupera">Usuario</label>
+                                <label for="usuarioRecupera">User</label>
                                 <input type="text" id="usuarioRecupera" onkeyup="verificarDatos(event);">
                             </div>
                         </div> 
                         <div class="mdl-card__actions text-right">
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--default" data-dismiss="modal">Cancelar</button>
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="recuperar()" >Aceptar</button>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--default" data-dismiss="modal">Cancel</button>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="recuperar()" >Accept</button>
                         </div>
                     </div>
                 </div>
@@ -180,12 +180,12 @@
         <script src="<?php echo RUTA_PLUGINS?>mdl/material.min.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.js?v=<?php echo time();?>"></script>
         <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
-        <script src="<?php echo RUTA_JS?>login.js?v=<?php echo time();?>"></script>
+        <script src="<?php echo RUTA_JS?>login_en.js?v=<?php echo time();?>"></script>
         <script type="text/javascript">
-            var URLactual = window.location;
-            if(URLactual['href'] != 'http://www.marketinghpe.com/promostorageq4/rla/en/'){
-                location.href = 'http://www.marketinghpe.com/promostorageq4/rla/en/';
-            }
+            // var URLactual = window.location;
+            // if(URLactual['href'] != 'http://www.marketinghpe.com/promostorageq4/rla/en/'){
+            //     location.href = 'http://www.marketinghpe.com/promostorageq4/rla/en/';
+            // }
             if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
                 $('select').selectpicker('mobile');
             } else {

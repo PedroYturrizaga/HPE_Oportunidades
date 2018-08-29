@@ -32,16 +32,16 @@
         </div>
         <div class="js-header--right">
             <p>Promo Storage Accelerate / Promo Flex Attach Servers</p>
-            <a onclick="cerrarSesion()">Cerrar Sesi&oacute;n</a>
+            <a onclick="cerrarSesion()">Log out</a>
         </div>
     </div>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
         <div class="mdl-layout__drawer">
-            <span class="mdl-layout-title">¿Qu&eacute; deseas hacer&#63;</span>
+            <span class="mdl-layout-title">What do you want to do?</span>
             <nav class="mdl-navigation">
-                <a id="cotizacion" class="mdl-navigation__link active" onclick="goToMenu(this.id)">Ingresar una nueva cotizaci&oacute;n</a>
-                <a id="puntaje" class="mdl-navigation__link" onclick="goToMenu(this.id)">Ver puntaje acumulado</a>
-                <a id="terminos" class="mdl-navigation__link" onclick="goToMenu(this.id)">T&eacute;rminos y Condiciones</a>
+                <a id="cotizacion" class="mdl-navigation__link active" onclick="goToMenu(this.id)">Enter a new quote</a>
+                <a id="puntaje" class="mdl-navigation__link" onclick="goToMenu(this.id)">View total earned points</a>
+                <a id="terminos" class="mdl-navigation__link" onclick="goToMenu(this.id)">Terms and Conditions</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
@@ -49,42 +49,42 @@
                 <div class="js-container">
                     <div class="js-user p-0">
                         <div class="js-user--left">
-                            <p>Bienvenido(a) <?php echo $nombre?> </p> 
+                            <p>Welcome <?php echo $nombre?> </p> 
                         </div>
                     </div>
                 </div>
             </section>
             <section id="section-cotizacion" class="js-section js-section--menu">
                 <div class="js-container">
-                    <h2 class="js-title">¡Gana <span id="money"></span> d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en la promoci&oacute;n de <span id="promocion"></span>!</h2>
-                    <p class="js-subtitle">Si ya cerraste un proyecto usando esta promoci&oacute;n y tu mayorista te facturo entre el 1 de Septiembre y el 31 de Octubre de 2018, llena la siguiente informacion para solicitar tus puntos de Engage & Grow:</p>
+                    <h2 class="js-title">Earn <span id="money"></span> dollars in Engage & Grow points for orders over 15k in the <span id="promocion"></span>promotion!</h2>
+                    <p class="js-subtitle">If you have already closed a project using this promotion and your wholesaler billed you between September 1 and October 31, 2018, fill out the following information to claim your Engage & Grow points:</p>
                     <div class="col-xs-12 p-0">
                         <div class="col-sm-6 col-xs-12">
                             <div class="col-xs-12 js-input">
-                                <label for="Nombre">Nombre</label>
+                                <label for="Nombre">Name</label>
                                 <input type="text" id="Nombre" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="compania">Compa&ntilde;&iacute;a</label>
+                                <label for="compania">Company</label>
                                 <input type="text" id="compania" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="pais">Pais</label>
+                                <label for="pais">Country</label>
                                 <input type="text" id="pais" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="email">Email</label>
+                                <label for="email">E-mail</label>
                                 <input type="email" id="email" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="telefono">Tel&eacute;fono</label>
+                                <label for="telefono">Phone</label>
                                 <input type="text" id="telefono" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input js-radio">
-                                <label>¿Tienes una cuenta de Engage&Grow activa?</label>
+                                <label>Do you have an active Engage & Grow account?</label>
                                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="radioCotizacion">
                                     <input type="radio" id="radioCotizacion" class="mdl-radio__button" name="option1" value="1" onchange="validarCampos(); verificaEstado();">
-                                    <span class="mdl-radio__label">Sí</span>
+                                    <span class="mdl-radio__label">Yes</span>
                                 </label>
                                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="radioFacturacion">
                                     <input type="radio" id="radioFacturacion" class="mdl-radio__button" name="option1" value="0" onchange="validarCampos(); verificaEstado();">
@@ -99,20 +99,20 @@
                                 </select>
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="NombreContacto">Nombre de la persona que te atendi&oacute; dentro del mayorista</label>
+                                <label for="NombreContacto">Name of the person who assisted you in the wholesaler</label>
                                 <input type="text" id="NombrePersona" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="emailContacto">Email del contacto que te atendi&oacute; dentro del mayorista</label>
+                                <label for="emailContacto">Email of the contact that attended you within the wholesaler</label>
                                 <input type="email" id="emailContacto" onchange="validarCampos(); verificaEstado();">
                             </div>
 
                             <div class="col-xs-12 js-input">
-                                <label for="numFactura"># de la factura del mayorista con el que se factur&oacute;</label>
+                                <label for="numFactura"># of the wholesaler invoice with which it was billed</label>
                                 <input type="text" id="numFactura" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input js-date js-flex">
-                                <input type="text" id="fecha" name="fecha" maxlength="10" placeholder="Fecha de Facturación" value="" style="pointer-events: none" onchange="verificaEstado();">
+                                <input type="text" id="fecha" name="fecha" maxlength="10" placeholder="Billing Date" value="" style="pointer-events: none" onchange="verificaEstado();">
                                 <div class="js-icon">
                                     <button type="button" class="mdl-button mdl-js-button mdl-button--icon">
                                         <i class="mdi mdi-date_range"></i>
@@ -120,11 +120,11 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="monto">Monto total de la orden de compra en USD</label>
+                                <label for="monto">Total amount of the purchase order in USD</label>
                                 <input type="text" id="monto" placeholder="0.00" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input js-file js-flex">
-                                <input type="text" id="archivoDocumento" placeholder="Suba su factura en imagen o pdf (2MB Max)" name="archivoDocumento" disabled>
+                                <input type="text" id="archivoDocumento" placeholder="Upload your invoice in image or pdf format (2MB Max)" name="archivoDocumento" disabled>
                                 <div class="js-icon">
                                     <button type="button" class="mdl-button mdl-js-button mdl-button--icon" onclick="subirFactura()">
                                         <i class="mdi mdi-backup"></i>
@@ -133,31 +133,31 @@
                             </div>
                         </div>
                         <div class="col-xs-12">
-                            <button id="ingresar" type="button" name="boton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="agregarDatos(); registrar();" disabled>Registrar Oportunidad</button>
+                            <button id="ingresar" type="button" name="boton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="agregarDatos(); registrar();" disabled>Register Opportunity</button>
                         </div>
                     </div>
                 </div>
             </section>
             <section id="section-puntaje" class="js-section js-section--menu js-opacity-done">
                 <div class="js-container">
-                    <h2 class="js-title">&Uacute;ltimos 4 ingresos</h2>
+                    <h2 class="js-title">Last 4 calculations</h2>
                     <div class="js-puntaje js-flex">
                         <div class="js-puntaje__table table-responsive">
                             <table id="tbUltimosIngresos" class="table">
                                 <thead>
                                     <tr>
-                                        <th>Pais</th>
-                                        <th>Compa&ntilde;&iacute;a</th>
-                                        <th>Mayorista</th>
-                                        <th>Fecha</th>
-                                        <th>Puntos</th>
+                                        <th>Country</th>
+                                        <th>Company</th>
+                                        <th>wholesaler</th>
+                                        <th>Date</th>
+                                        <th>Points</th>
                                     </tr>
                                 </thead >
                                 <tbody id="bodyPuntaje"><?php echo $html ?></tbody>
                             </table>
                         </div>
                         <div class="js-puntaje__puntos">
-                            <p class="title-formulario">Puntos Engage & Grow acumulados</p>
+                            <p class="title-formulario">Total earned Engage&Grow points</p>
                             <span id="puntajeGeneral"><?php echo $puntosGeneral ?> pts</span>
                         </div>
                     </div>
@@ -165,26 +165,26 @@
             </section>
             <section id="section-terminos" class="js-section js-section--menu js-opacity-done">
                 <div class="js-container">
-                    <h2 class="js-title">T&eacute;rminos y condiciones</h2>
+                    <h2 class="js-title">Terms and Conditions</h2>
                     <div class="js-terminos">
                         <h3>Promo Storage Accelerate</h3>
                         <ol>
-                            <li>100 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en productos de esta promoci&oacute;n de Storage.</li>
-                            <li>No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
-                            <li>Promoci&oacute;n v&aacute;lida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
-                            <li>&Uacute;nicamente v&aacute;lido por compras realizadas a trav&eacute;s de mayoristas autorizados.</li>
-                            <li>Los puntos ser&aacute;n acreditados en la cuenta de Engage & Grow m&aacute;ximo el 15 de Noviembre, 2018</li>
-                            <li>HPE se reserva el derecho de modificar estos T&eacute;rminos y Condiciones, cambiar, reestructurar o descontinuar este incentivo en cualquier  momento sin previo aviso a los participantes.</li>
+                            <li>100 dollars in Engage & Grow points for orders over 15k in products of this Storage promotion.</li>
+                            <li>It does not apply to projects sold with Deal/OPG special prices.</li>
+                            <li>Promotion valid for billing from September 1, 2018 to October 31, 2018.</li>
+                            <li>Only valid for purchases made through authorized wholesalers.</li>
+                            <li>Points will be credited to the Engage & Grow account up to November 15, 2018.</li>
+                            <li>HPE reserves the right to modify these Terms and Conditions, change, restructure or discontinue this incentive at any time without prior notice to the participants.</li>
                         </ol>
                         <h3>Promo Flex Attach Servers</h3>
                         <ol>
-                            <li>50 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a 15k en la Promo flex Attach de Servidores.</li>
-                            <li>No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
-                            <li>Las cotizaciones valen a&uacute;n cuando no se cierre la venta.</li>
-                            <li>Promoci&oacute;n v&aacute;lida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
-                            <li> &Uacute;nicamente v&aacute;lido por compras realizadas a trav&eacute;s de mayoristas autorizados.</li>
-                            <li>Los puntos ser&aacute;n acreditados en la cuenta de Engage & Grow m&aacute;ximo el 15 de Noviembre, 2018.</li>
-                            <li>HPE se reserva el derecho de modificar estos T&eacute;rminos y Condiciones, cambiar, reestructurar o descontinuar este incentivo en cualquier momento sin previo aviso a los participantes.</li>
+                            <li>50 dollars in Engage & Grow points for orders over 15k in the Promo flex Attach de Servidores.</li>
+                            <li>It does not apply to projects sold with Deal/OPG special prices.</li>
+                            <li>The quotes are valid even when the sale is not closed.</li>
+                            <li>Promotion valid for billing from September 1, 2018 to October 31, 2018.</li>
+                            <li>Only valid for purchases made through authorized wholesalers.</li>
+                            <li>Points will be credited to the Engage & Grow account up to November 15, 2018.</li>
+                            <li>HPE reserves the right to modify these Terms and Conditions, change, restructure or discontinue this incentive at any time without prior notice to the participants.</li>
                         </ol>
                     </div>
                 </div>
@@ -197,10 +197,10 @@
             <div class="modal-content">
                 <div class="mdl-card">
                     <div class="mdl-card__title p-b-0">
-                        <h2>LISTO&#33;</h2>
+                        <h2>ALL SET!&#33;</h2>
                     </div>
                     <div class="mdl-card__supporting-text p-t-0 p-b-0">
-                        <h3>Tu registro ha sido enviado satisfactoriamente.</h3>
+                        <h3>Your registration has been sent successfully.</h3>
                         <small>Team HPE RLA</small>
                     </div> 
                     <div class="mdl-card__actions">                         
@@ -215,11 +215,11 @@
             <div class="modal-content">
                 <div class="mdl-card">
                     <div class="mdl-card__title">
-                        <h2>Bienvenido</h2>
+                        <h2>Welcome</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <h3>Por favor seleccione una opción</h3>
-                        <p>Depende de la selección se le asignaran sus puntos</p>
+                        <h3>Please select an option</h3>
+                        <p>The points will be assigned according on your selection </p>
                     </div>
                     <div class="mdl-card__actions">
                         <button id="promo1" data-money="100" data-promo="Storage Accelerate" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" onclick="goToPromocion(this.id)">STORAGE</button>
@@ -247,7 +247,7 @@
     <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>jsmenu.js?v=<?php echo time();?>"></script>
-    <script src="<?php echo RUTA_JS?>solicitud.js?v=<?php echo time();?>"></script>
+    <script src="<?php echo RUTA_JS?>solicitud_en.js?v=<?php echo time();?>"></script>
     <script type="text/javascript">
     	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
         	$('select').selectpicker('mobile');
