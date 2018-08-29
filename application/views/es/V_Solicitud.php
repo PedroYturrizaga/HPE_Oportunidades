@@ -254,6 +254,14 @@
         } else {
             $('select').selectpicker();
         }
+        var nombre   = <?php echo "'".$nombre."'"?>;
+        var compania = <?php echo "'".$compania."'"?>;
+        var pais     = <?php echo "'".$pais."'"?>;
+        var email    = <?php echo "'".$email."'"?>;
+        $('#Nombre').val(nombre);
+        $('#compania').val(compania);
+        $('#pais').val(pais);
+        $('#email').val(email);
         initButtonCalendarDaysMaxToday('fecha');
         initMaskInputs('fecha');
     </script>

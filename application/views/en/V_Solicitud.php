@@ -62,32 +62,32 @@
                         <div class="col-sm-6 col-xs-12">
                             <div class="col-xs-12 js-input">
                                 <label for="Nombre">Nombre</label>
-                                <input type="text" id="Nombre" onchange="validarCampos()">
+                                <input type="text" id="Nombre" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input">
                                 <label for="compania">Compa&ntilde;&iacute;a</label>
-                                <input type="text" id="compania" onchange="validarCampos()">
+                                <input type="text" id="compania" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input">
                                 <label for="pais">Pais</label>
-                                <input type="text" id="pais" onchange="validarCampos()">
+                                <input type="text" id="pais" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" onchange="validarCampos()">
+                                <input type="email" id="email" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input">
                                 <label for="telefono">Tel&eacute;fono</label>
-                                <input type="text" id="telefono" onchange="validarCampos()">
+                                <input type="text" id="telefono" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input js-radio">
                                 <label>¿Tienes una cuenta de Engage&Grow activa?</label>
                                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="radioCotizacion">
-                                    <input type="radio" id="radioCotizacion" class="mdl-radio__button" name="option1" value="1" onchange="validarCampos()">
+                                    <input type="radio" id="radioCotizacion" class="mdl-radio__button" name="option1" value="1" onchange="validarCampos(); verificaEstado();">
                                     <span class="mdl-radio__label">Sí</span>
                                 </label>
                                 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="radioFacturacion">
-                                    <input type="radio" id="radioFacturacion" class="mdl-radio__button" name="option1" value="0" onchange="validarCampos()">
+                                    <input type="radio" id="radioFacturacion" class="mdl-radio__button" name="option1" value="0" onchange="validarCampos(); verificaEstado();">
                                     <span class="mdl-radio__label">No</span>
                                 </label>
                             </div>
@@ -99,20 +99,20 @@
                                 </select>
                             </div>
                             <div class="col-xs-12 js-input">
-                                <label for="NombrePersona">Nombre de la persona que te atendi&oacute; dentro del mayorista</label>
-                                <input type="text" id="NombrePersona" onchange="validarCampos()">
+                                <label for="NombreContacto">Nombre de la persona que te atendi&oacute; dentro del mayorista</label>
+                                <input type="text" id="NombrePersona" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input">
                                 <label for="emailContacto">Email del contacto que te atendi&oacute; dentro del mayorista</label>
-                                <input type="email" id="emailContacto" onchange="validarCampos()">
+                                <input type="email" id="emailContacto" onchange="validarCampos(); verificaEstado();">
                             </div>
 
                             <div class="col-xs-12 js-input">
                                 <label for="numFactura"># de la factura del mayorista con el que se factur&oacute;</label>
-                                <input type="text" id="numFactura" onchange="validarCampos()">
+                                <input type="text" id="numFactura" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input js-date js-flex">
-                                <input type="text" id="fecha" name="fecha" maxlength="10" placeholder="Fecha de Facturación" value="" style="pointer-events: none">
+                                <input type="text" id="fecha" name="fecha" maxlength="10" placeholder="Fecha de Facturación" value="" style="pointer-events: none" onchange="verificaEstado();">
                                 <div class="js-icon">
                                     <button type="button" class="mdl-button mdl-js-button mdl-button--icon">
                                         <i class="mdi mdi-date_range"></i>
@@ -121,7 +121,7 @@
                             </div>
                             <div class="col-xs-12 js-input">
                                 <label for="monto">Monto total de la orden de compra en USD</label>
-                                <input type="text" id="monto" placeholder="0.00" onchange="validarCampos()">
+                                <input type="text" id="monto" placeholder="0.00" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input js-file js-flex">
                                 <input type="text" id="archivoDocumento" placeholder="Suba su factura en imagen o pdf (2MB Max)" name="archivoDocumento" disabled>
@@ -133,7 +133,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12">
-                            <button id="ingresar" type="button" name="boton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="agregarDatos(); registrar();">Registrar Oportunidad</button>
+                            <button id="ingresar" type="button" name="boton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="agregarDatos(); registrar();" disabled>Registrar Oportunidad</button>
                         </div>
                     </div>
                 </div>
@@ -254,6 +254,14 @@
         } else {
             $('select').selectpicker();
         }
+        var nombre   = <?php echo "'".$nombre."'"?>;
+        var compania = <?php echo "'".$compania."'"?>;
+        var pais     = <?php echo "'".$pais."'"?>;
+        var email    = <?php echo "'".$email."'"?>;
+        $('#Nombre').val(nombre);
+        $('#compania').val(compania);
+        $('#pais').val(pais);
+        $('#email').val(email);
         initButtonCalendarDaysMaxToday('fecha');
         initMaskInputs('fecha');
     </script>
