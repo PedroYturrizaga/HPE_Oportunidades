@@ -235,6 +235,38 @@ function limpiarCampos(){
 
 }
 
+function verificaEstado() {
+	var Nombre 			= $('#Nombre').val();
+	var compania 		= $('#compania').val();
+	var pais 			= $('#pais').val();
+	var email 			= $('#email').val();
+	var telefono		= $('#telefono').val();
+	var facturacion 	= $('#radioFacturacion').is(':checked');
+	var cotizacion  	= $('#radioCotizacion').is(':checked');
+	var noMayorista 	= $('#noMayorista').val();
+	var NombrePersona 	= $('#NombrePersona').val();
+	var emailContacto  	= $('#emailContacto').val();
+	var numFactura  	= $('#numFactura').val();
+	var fecha			= $('#fecha').val();
+	var monto			= $('#monto').val();
+	var cuentaActiva	= null;
+	if(facturacion == true){
+		cuentaActiva = 0;
+	}
+	if(cotizacion == true){
+		cuentaActiva = 1;
+	}
+	factura = $('#archivo')[0].files[0];
+	if ( Nombre != '' && compania != '' && pais != '' && email != '' && telefono != '' && cuentaActiva != null 
+		&& noMayorista != '' && NombrePersona != '' && emailContacto != '' && numFactura != '' && fecha != '' && monto != '') {
+		$('#ingresar').removeAttr('disabled');
+		console.log(1);
+	} else {
+		$('#ingresar').attr('disabled');
+		console.log(2);
+	}
+}
+
 function soloLetras(e){
     key 	   = e.keyCode || e.which;
     tecla 	   = String.fromCharCode(key).toLowerCase();

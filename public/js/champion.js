@@ -69,7 +69,6 @@ function openModal(){
 			$('#noMayorista').html(data.option);
 			$('#noMayorista').selectpicker('refresh');
 			$('#pais').val(data.pais);
-			console.log(data.pais);
 			componentHandler.upgradeAllRegistered();
 			modal('modalDetalles');		
 		} else { return; }

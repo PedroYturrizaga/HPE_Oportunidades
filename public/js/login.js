@@ -170,7 +170,6 @@ function recuperar() {
     })
     .done(function(data) {
         data = JSON.parse(data);
-        console.log(data);
         try {
             if(data.error == 0) {
                 abrirCerrarModal('recuperaContrasena');
@@ -264,7 +263,6 @@ function registrar() {
     })
     .done(function(data) {
         data = JSON.parse(data);
-        console.log(data);
         try {
             if(data.error == 0) {
                 abrirCerrarModal('registroUsuario');
