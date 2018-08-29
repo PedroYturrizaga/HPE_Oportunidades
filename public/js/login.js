@@ -42,7 +42,7 @@ function ingresar(){
             }else {
                 if(data.pass == null || data.pass == '') {
                     toastr.remove();
-                    msj('error', 'alguno de sus datos son incorrectos');
+                    msj('error', data.msj);
                 }else {
                     toastr.clear();
                     msj('error', data.pass);
@@ -137,6 +137,7 @@ function cerrarCesion(){
 }
 
 function openModalRecuperar() {
+    var user = $('#usuarioRecupera').val('');
     modal('recuperaContrasena');
 }
 
@@ -145,6 +146,13 @@ function openModalCambiar() {
 }
 
 function openModalCrear() {
+    var nombres   = $('#nombres').val('');
+    var compania  = $('#compania').val('');
+    var pais      = $('#pais').val('');
+    var region    = $('#region').val(0);
+    var email     = $('#email').val('');
+    var pass      = $('#pass').val('');
+    var passRep   = $('#passRep').val('');
     modal('registroUsuario');
 }
 
@@ -166,6 +174,8 @@ function recuperar() {
         try {
             if(data.error == 0) {
                 abrirCerrarModal('recuperaContrasena');
+                toastr.remove();
+                msj('success',data.msj);
             } else { 
                 toastr.remove();
                 msj('error',data.msj);
