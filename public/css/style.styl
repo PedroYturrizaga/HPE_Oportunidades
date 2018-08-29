@@ -115,7 +115,6 @@ label
 	padding 40px 20px;
 .js-section--menu
 	absolute()
-	margin-top 10px
 	&.fadeIn
 		z-index 5
 		opacity 1
@@ -325,6 +324,9 @@ label
 	&.js-button--default
 		background-color transparent !important
 		color #000000
+		&.active
+			background-color $default !important
+			color #FFFFFF
 	&.js-button--login
 		width 100%
 		margin 20px 0
@@ -416,6 +418,8 @@ label
 			li
 				a
 					color #000000
+#user
+	z-index 999
 /*TABLE*/
 table
 	&>tbody

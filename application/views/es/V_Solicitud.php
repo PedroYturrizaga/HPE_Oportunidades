@@ -45,17 +45,17 @@
             </nav>
         </div>
         <main class="mdl-layout__content">
-            <section class="js-section p-t-20">
+            <section id="section-cotizacion" class="js-section js-section--menu">
                 <div class="js-container">
                     <div class="js-user p-0">
                         <div class="js-user--left">
                             <p>Bienvenido(a) <?php echo $nombre?> </p> 
                         </div>
+                        <div class="js-user--right">
+                            <button id="promo1-select" data-money="100" data-promo="Storage Accelerate" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--default js-promo" onclick="goToPromocion(this.id)">STORAGE</button>
+                            <button id="promo2-select" data-money="50" data-promo="Promo Flex Attach" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--default js-promo" onclick="goToPromocion(this.id)">SERVERS</button>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section id="section-cotizacion" class="js-section js-section--menu">
-                <div class="js-container">
                     <h2 class="js-title">¡Gana <span id="money"></span> d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en la promoci&oacute;n de <span id="promocion"></span>!</h2>
                     <p class="js-subtitle">Si ya cerraste un proyecto usando esta promoci&oacute;n y tu mayorista te factur&oacute; entre el 1 de Septiembre y el 31 de Octubre de 2018, llena la siguiente informacion para solicitar tus puntos de Engage & Grow:</p>
                     <div class="col-xs-12 p-0">

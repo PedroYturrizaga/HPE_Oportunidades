@@ -325,8 +325,6 @@ function goToMenu(id){
 	idSection.removeClass('animated fadeOut');
 	idSection.addClass('animated fadeIn');
 	idLink.addClass('active');
-	if(id == 'cotizacion')
-		$('#ModalTipoPromo').modal('show');
 }
 function cerrarSesion(){
 	$.ajax({
@@ -386,4 +384,6 @@ function goToPromocion(id){
 		money = $('#'+id).attr('data-money');
 	$('#money').text(money);
 	$('#promocion').text(promo);
+	$('.js-promo').removeClass('active');
+	$('#'+id+'.js-promo').addClass('active');
 }
