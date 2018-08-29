@@ -233,7 +233,7 @@ label
 		margin 10px 0
 .js-input
 	padding 7px 20px
-	height 72px
+	height 65px
 	margin 0
 	border 1px solid rgba(0,0,0,0.15)
 	background-color #FFFFFF
@@ -289,7 +289,7 @@ label
 		cursor pointer
 	input
 		display block
-		height 36px
+		height 30px
 		width 100%
 		border none
 		font-size 16px
@@ -305,6 +305,10 @@ label
 			selectTransparent()
 			&:focus
 				outline: 0 !important
+.js-checkbox
+	margin-top 20px
+	.mdl-checkbox__box-outline
+		border-color #FFFFFF
 .js-button
 	margin 10px 0
 	text-transform initial
@@ -340,18 +344,19 @@ label
 .js-middle
 	flexCenter()
 	.js-middle--left
-		justify-content flex-start
-		width 100%
-		color #FFFFFF
+		border-right 2px solid #FFFFFF
+		margin-right 15px	
+	.js-middle--left
 	.js-middle--right
 		justify-content flex-end
 		width 100%
 		font-size 18px
-		text-align right
+		text-align left
 		a
+			text-decoration underline
 			color #FFFFFF
-			text-decoration none
 			cursor pointer
+			text-decoration-color #01A982
 .js-terminos
 	h3
 		color $default
