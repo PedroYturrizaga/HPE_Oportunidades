@@ -57,7 +57,7 @@
             <section id="section-cotizacion" class="js-section js-section--menu">
                 <div class="js-container">
                     <h2 class="js-title">¡Gana <span id="money"></span> d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en la promoci&oacute;n de <span id="promocion"></span>!</h2>
-                    <p class="js-subtitle">Si ya cerraste un proyecto usando esta promoci&oacute;n y tu mayorista te facturo entre el 1 de Septiembre y el 31 de Octubre de 2018, llena la siguiente informacion para solicitar tus puntos de Engage & Grow:</p>
+                    <p class="js-subtitle">Si ya cerraste un proyecto usando esta promoci&oacute;n y tu mayorista te factur&oacute; entre el 1 de Septiembre y el 31 de Octubre de 2018, llena la siguiente informacion para solicitar tus puntos de Engage & Grow:</p>
                     <div class="col-xs-12 p-0">
                         <div class="col-sm-6 col-xs-12">
                             <div class="col-xs-12 js-input">

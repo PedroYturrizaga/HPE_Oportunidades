@@ -300,3 +300,10 @@ function registrar() {
 //         }
 //     });
 // }
+$(document).ready(function(){
+    if($('div').hasClass('hola') == true){
+        console.log("verdadero");
+    }else{
+        console.log("valso");
+    }
+})
