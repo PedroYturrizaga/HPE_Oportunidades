@@ -385,5 +385,6 @@ function goToPromocion(id){
 	$('#money').text(money);
 	$('#promocion').text(promo);
 	$('.js-promo').removeClass('active');
+	$('#'+id+'-select.js-promo').addClass('active');
 	$('#'+id+'.js-promo').addClass('active');
 }
