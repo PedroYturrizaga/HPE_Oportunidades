@@ -124,7 +124,7 @@
                                 <input type="text" id="monto" placeholder="0.00" onchange="validarCampos(); verificaEstado();">
                             </div>
                             <div class="col-xs-12 js-input js-file js-flex">
-                                <input type="text" id="archivoDocumento" placeholder="Upload your invoice in image or pdf format (2MB Max)" name="archivoDocumento" disabled>
+                                <input type="text" id="archivoDocumento" placeholder="Upload your invoice in image or pdf format (2MB Max)" name="archivoDocumento" disabled onchange="verificaEstado();">
                                 <div class="js-icon">
                                     <button type="button" class="mdl-button mdl-js-button mdl-button--icon" onclick="subirFactura()">
                                         <i class="mdi mdi-backup"></i>
@@ -133,7 +133,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12">
-                            <button id="ingresar" type="button" name="boton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="agregarDatos(); registrar();" disabled>Register Opportunity</button>
+                            <button id="ingresar" type="button" name="boton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="registrar(); agregarDatos();" disabled>Register Opportunity</button>
                         </div>
                     </div>
                 </div>
