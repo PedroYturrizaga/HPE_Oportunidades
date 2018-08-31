@@ -55,7 +55,7 @@
                 </div>
             </section>
             <section id="section-cotizacion" class="js-section js-section--menu">
-                <div class="js-container">
+                <div class="js-container row">
                     <h2 class="js-title">Earn <span id="money"></span> dollars in Engage & Grow points for orders over 15k in the <span id="promocion"></span>promotion!</h2>
                     <p class="js-subtitle">If you have already closed a project using this promotion and your wholesaler billed you between September 1 and October 31, 2018, fill out the following information to claim your Engage & Grow points:</p>
                     <div class="col-xs-12 p-0">

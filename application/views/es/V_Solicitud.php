@@ -46,7 +46,7 @@
         </div>
         <main class="mdl-layout__content">
             <section id="section-cotizacion" class="js-section js-section--menu">
-                <div class="js-container">
+                <div class="js-container row">
                     <div class="js-user p-0">
                         <div class="js-user--left">
                             <p>Bienvenido(a) <?php echo $nombre?> </p> 
@@ -249,6 +249,8 @@
     <script src="<?php echo RUTA_JS?>jsmenu.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>solicitud.js?v=<?php echo time();?>"></script>
     <script type="text/javascript">
+        initButtonCalendar('fecha');
+        initMaskInputs('fecha');
     	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
         	$('select').selectpicker('mobile');
         } else {
@@ -262,7 +264,5 @@
         $('#compania').val(compania);
         $('#pais').val(pais);
         $('#email').val(email);
-        initButtonCalendar('fecha');
-        initMaskInputs('fecha');
     </script>
 </body>
