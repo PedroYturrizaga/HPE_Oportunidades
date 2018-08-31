@@ -35,7 +35,6 @@ class M_Solicitud extends CI_Model {
 				 GROUP BY mayorista
 			  ORDER BY mayorista ASC";
 		$result = $this->db->query($sql);
-		print_r($this->db->last_query());
 		return $result->result();
 	}
 
