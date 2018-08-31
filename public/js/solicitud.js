@@ -153,6 +153,7 @@ function registrar() {
 		try{
         	data = JSON.parse(data);
         	if(data.error == 0){
+        		$('#ingresar').attr('disabled', 'disabled');
         		modal('ModalQuestion');
         		$('#bodyPuntaje').html(data.html);
         		$('#puntajeGeneral').html(data.puntosGeneral);
@@ -229,7 +230,7 @@ function limpiarCampos(){
 	$('#attach').val('0');
 	$('.selectpicker').selectpicker('refresh');
 	$('#fecha').val(null);
-
+	$('#archivoDocumento').val(null);
 }
 
 function verificaEstado() {
