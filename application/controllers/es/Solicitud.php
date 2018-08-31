@@ -25,7 +25,8 @@ class Solicitud extends CI_Controller {
 			$data['email']    = $nombre[0]->usuario;
 			$pais   = $this->session->userdata('pais');
 			$idUser = $this->session->userdata('Id_user');
-	        $datos  = $this->M_Solicitud->getMayoristas($idUser);
+	        $region = ( $nombre[0]->region != 'Caribe') ? null : $nombre[0]->region;
+	        $datos  = $this->M_Solicitud->getMayoristas($idUser, $region);
 			$option = ' ';
 			foreach ($datos as $key) {
 				$option .= '<option value="'.$key->mayorista.'">'.$key->mayorista.'</option>';

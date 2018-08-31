@@ -24,16 +24,18 @@ class M_Solicitud extends CI_Model {
         return array('error' => EXIT_SUCCESS,'msj' => MSJ_UPT);
     }
 
-	function getMayoristas($idVendedor) {
+	function getMayoristas($idVendedor, $region = null) {
+		$where = ($region == null) ? "" : " AND m.pais = v.region "; 
 		$sql = "SELECT v.id_vendedor,
 					   m.mayorista
 				  FROM tb_mayorista m, 
 				  	   tb_vendedores v
-				 WHERE v.id_vendedor = ".$idVendedor."
-                   AND m.pais = v.region
-			  GROUP BY mayorista
+				 WHERE v.id_vendedor = ".$idVendedor.
+				 $where."
+				 GROUP BY mayorista
 			  ORDER BY mayorista ASC";
 		$result = $this->db->query($sql);
+		print_r($this->db->last_query());
 		return $result->result();
 	}
 
