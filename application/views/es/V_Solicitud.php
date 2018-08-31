@@ -56,7 +56,7 @@
                             <button id="promo2-select" data-money="50" data-promo="Promo Flex Attach" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--default js-promo" onclick="goToPromocion(this.id)">SERVERS</button>
                         </div>
                     </div>
-                    <h2 class="js-title">¡Gana <span id="money"></span> d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en la promoci&oacute;n de <span id="promocion"></span>!</h2>
+                    <h2 class="js-title">¡Gana $<span id="money"></span> d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en la promoci&oacute;n de <span id="promocion"></span>!</h2>
                     <p class="js-subtitle">Si ya cerraste un proyecto usando esta promoci&oacute;n y tu mayorista te factur&oacute; entre el 1 de Septiembre y el 31 de Octubre de 2018, llena la siguiente informacion para solicitar tus puntos de Engage & Grow:</p>
                     <div class="col-xs-12 p-0">
                         <div class="col-sm-6 col-xs-12">
@@ -169,7 +169,7 @@
                     <div class="js-terminos">
                         <h3>Promo Storage Accelerate</h3>
                         <ol>
-                            <li>100 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en productos de esta promoci&oacute;n de Storage.</li>
+                            <li>$100 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a los 15k en productos de esta promoci&oacute;n de Storage.</li>
                             <li>No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
                             <li>Promoci&oacute;n v&aacute;lida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>
                             <li>&Uacute;nicamente v&aacute;lido por compras realizadas a trav&eacute;s de mayoristas autorizados.</li>
@@ -178,7 +178,7 @@
                         </ol>
                         <h3>Promo Flex Attach Servers</h3>
                         <ol>
-                            <li>50 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a 15k en la Promo flex Attach de Servidores.</li>
+                            <li>$50 d&oacute;lares en puntos Engage & Grow por &oacute;rdenes superiores a 15k en la Promo flex Attach de Servidores.</li>
                             <li>No aplica para proyectos vendidos con Deal/OPG de precios especiales.</li>
                             <li>Las cotizaciones valen a&uacute;n cuando no se cierre la venta.</li>
                             <li>Promoci&oacute;n v&aacute;lida para facturaciones desde el 1 de Septiembre, 2018 hasta el 31 de Octubre, 2018.</li>

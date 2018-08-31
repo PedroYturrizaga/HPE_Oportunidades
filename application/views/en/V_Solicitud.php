@@ -39,7 +39,7 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">What do you want to do?</span>
             <nav class="mdl-navigation">
-                <a id="cotizacion" class="mdl-navigation__link active" onclick="goToMenu(this.id)">Enter a new quote</a>
+                <a id="cotizacion" class="mdl-navigation__link active" onclick="goToMenu(this.id)">Register a new sale</a>
                 <a id="puntaje" class="mdl-navigation__link" onclick="goToMenu(this.id)">View total earned points</a>
                 <a id="terminos" class="mdl-navigation__link" onclick="goToMenu(this.id)">Terms and Conditions</a>
             </nav>
@@ -56,7 +56,7 @@
                             <button id="promo2-select" data-money="50" data-promo="Promo Flex Attach" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--default js-promo" onclick="goToPromocion(this.id)">SERVERS</button>
                         </div>
                     </div>
-                    <h2 class="js-title">Earn <span id="money"></span> dollars in Engage & Grow points for orders over 15k in the <span id="promocion"></span>promotion!</h2>
+                    <h2 class="js-title">Earn $<span id="money"></span> dollars in Engage & Grow points for orders over 15k in the <span id="promocion"></span>promotion!</h2>
                     <p class="js-subtitle">If you have already closed a project using this promotion and your wholesaler billed you between September 1 and October 31, 2018, fill out the following information to claim your Engage & Grow points:</p>
                     <div class="col-xs-12 p-0">
                         <div class="col-sm-6 col-xs-12">
@@ -169,7 +169,7 @@
                     <div class="js-terminos">
                         <h3>Promo Storage Accelerate</h3>
                         <ol>
-                            <li>100 dollars in Engage & Grow points for orders over 15k in products of this Storage promotion.</li>
+                            <li>$100 dollars in Engage & Grow points for orders over 15k in products of this Storage promotion.</li>
                             <li>It does not apply to projects sold with Deal/OPG special prices.</li>
                             <li>Promotion valid for billing from September 1, 2018 to October 31, 2018.</li>
                             <li>Only valid for purchases made through authorized wholesalers.</li>
@@ -178,7 +178,7 @@
                         </ol>
                         <h3>Promo Flex Attach Servers</h3>
                         <ol>
-                            <li>50 dollars in Engage & Grow points for orders over 15k in the Promo flex Attach de Servidores.</li>
+                            <li>$50 dollars in Engage & Grow points for orders over 15k in the Promo flex Attach de Servidores.</li>
                             <li>It does not apply to projects sold with Deal/OPG special prices.</li>
                             <li>The quotes are valid even when the sale is not closed.</li>
                             <li>Promotion valid for billing from September 1, 2018 to October 31, 2018.</li>
