@@ -218,10 +218,6 @@ function agregarDatos(){
 function limpiarCampos(){
 	$('#facturacion').removeClass('is-checked');
 	$('#cotizacion').removeClass('is-checked');
-	$('#Nombre').val(null);
-	$('#compania').val(null);
-	$('#pais').val(null);
-	$('#email').val(null);
 	$('#telefono').val(null);
 	$('#noMayorista').val(null);
 	$('#NombrePersona').val(null);
