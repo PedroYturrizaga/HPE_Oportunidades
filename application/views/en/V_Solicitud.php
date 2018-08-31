@@ -45,17 +45,17 @@
             </nav>
         </div>
         <main class="mdl-layout__content">
-            <section class="js-section p-t-20">
-                <div class="js-container">
+            <section id="section-cotizacion" class="js-section js-section--menu">
+                <div class="js-container row">
                     <div class="js-user p-0">
                         <div class="js-user--left">
                             <p>Welcome <?php echo $nombre?> </p> 
                         </div>
+                        <div class="js-user--right">
+                            <button id="promo1-select" data-money="100" data-promo="Storage Accelerate" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--default js-promo" onclick="goToPromocion(this.id)">STORAGE</button>
+                            <button id="promo2-select" data-money="50" data-promo="Promo Flex Attach" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button js-button--default js-promo" onclick="goToPromocion(this.id)">SERVERS</button>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section id="section-cotizacion" class="js-section js-section--menu">
-                <div class="js-container row">
                     <h2 class="js-title">Earn <span id="money"></span> dollars in Engage & Grow points for orders over 15k in the <span id="promocion"></span>promotion!</h2>
                     <p class="js-subtitle">If you have already closed a project using this promotion and your wholesaler billed you between September 1 and October 31, 2018, fill out the following information to claim your Engage & Grow points:</p>
                     <div class="col-xs-12 p-0">
