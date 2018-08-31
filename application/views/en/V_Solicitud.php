@@ -150,6 +150,8 @@
                                         <th>Company</th>
                                         <th>wholesaler</th>
                                         <th>Date</th>
+                                        <th>Type Sale</th>
+                                        <th># Invoice</th>
                                         <th>Points</th>
                                     </tr>
                                 </thead >

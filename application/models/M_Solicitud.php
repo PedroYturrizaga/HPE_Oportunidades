@@ -44,6 +44,7 @@ class M_Solicitud extends CI_Model {
 					 compania,
 					 no_mayorista,
 					 fecha_factura,
+					 nu_factura,
 					 puntos,
 					 SUM(`puntos`) AS puntos_total
 				FROM tb_cotizacion 

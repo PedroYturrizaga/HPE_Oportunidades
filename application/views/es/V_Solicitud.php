@@ -150,6 +150,8 @@
                                         <th>Compa&ntilde;&iacute;a</th>
                                         <th>Mayorista</th>
                                         <th>Fecha</th>
+                                        <th>Tipo Venta</th>
+                                        <th># Factura</th>
                                         <th>Puntos</th>
                                     </tr>
                                 </thead >

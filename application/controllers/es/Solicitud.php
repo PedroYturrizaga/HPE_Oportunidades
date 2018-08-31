@@ -41,6 +41,8 @@ class Solicitud extends CI_Controller {
 						      <td class="text-left">'.$key->compania.'</td>
 						      <td class="text-left">'.$key->no_mayorista.'</td>
 	                          <td class="text-left">'.$key->fecha_factura.'</td>
+	                          <td class="text-left">'.(($key->puntos == 50) ? 'Servers' : 'Storage' ).'</td>
+	                          <td class="text-left">'.$key->nu_factura.'</td>
 	                          <td class="text-center"> '.$key->puntos.' </td>
 	                      </tr>';
 	          	$puntosEngage += $key->puntos_total;
@@ -140,16 +142,18 @@ class Solicitud extends CI_Controller {
 			foreach ($obtenerOrdenes as $key) {
 				$html .= '<tr>
 						      <td class="text-left">'.$key->pais.'</td>
-	                          <td class="text-left">'.$key->documento.'</td>
-	                          <td class="text-left">'.$key->fecha.'</td>
-	                          <td class="text-center"> '.$key->puntos_cotizados.' </td>
-	                          <td class="text-center"> '.$key->puntos_facturados.' </td>
-	                          <td class="text-center"> '.$key->puntos_total.' </td> 
+						      <td class="text-left">'.$key->compania.'</td>
+						      <td class="text-left">'.$key->no_mayorista.'</td>
+	                          <td class="text-left">'.$key->fecha_factura.'</td>
+	                          <td class="text-left">'.(($key->puntos == 50) ? 'Servers' : 'Storage' ).'</td>
+	                          <td class="text-left">'.$key->nu_factura.'</td>
+	                          <td class="text-center"> '.$key->puntos.' </td>
 	                      </tr>';
 	          	$puntosEngage += $key->puntos_total;
 			}
 
 			$pais2  = $this->session->userdata('pais');
+			//CHAMPIONS
 			$html2  = '';
 			$htmlCanales = '';
 			$datos  = $this->M_Solicitud->getCanalMasUsado($pais2, $idVendedor);
