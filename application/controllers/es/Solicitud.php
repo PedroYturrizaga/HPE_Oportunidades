@@ -119,13 +119,9 @@ class Solicitud extends CI_Controller {
             }else {
                 if($nuevo[$contador-1] == 'pdf' || $nuevo[$contador-1] == 'jpg' || $nuevo[$contador-1] == 'png' || $nuevo[$contador-1] == 'PDF' || $nuevo[$contador-1] == 'JPG' || $nuevo[$contador-1] == 'PNG'){
                     $target = getcwd().DIRECTORY_SEPARATOR.'public'.DIRECTORY_SEPARATOR.'archivos'.DIRECTORY_SEPARATOR.basename($_FILES['archivo']['name']);
-    	print_r("moviendo");
-    	print_r("		");
                     if(move_uploaded_file($archivotmp, $target) ){
                         $arrUpdt = array('documento' => $_FILES['archivo']['name']);
                         $this->M_Solicitud->updateDatos($arrUpdt, $last, 'tb_cotizacion');
-        print_r($this->db->last_query());
-        print_r("		");
                         $respuesta->mensaje = 'Su factura se subió correctamente';
                         $respuesta->error = EXIT_SUCCESS;
                     } else {
@@ -137,8 +133,6 @@ class Solicitud extends CI_Controller {
                     $respuesta->mensaje = 'El formato de la factura es incorrecto';
                 }
             }
-        print_r("guardado");
-    	print_r("		");
             $idVendedor     = $this->session->userdata('Id_user');
             $obtenerOrdenes = $this->M_Solicitud->getLastOrders($idVendedor);
 			$html = null;
