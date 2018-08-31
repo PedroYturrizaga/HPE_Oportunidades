@@ -174,6 +174,7 @@ $("#archivo").change(function(e) {
 	var files = e.target.files;
     var archivo = files[0].name;
     archivo = archivo.replace(/\s/g,"_");
+	$('#archivoDocumento').trigger("onchange");
 	$('#archivoDocumento').val(archivo);
 });
 
@@ -218,10 +219,6 @@ function agregarDatos(){
 function limpiarCampos(){
 	$('#facturacion').removeClass('is-checked');
 	$('#cotizacion').removeClass('is-checked');
-	$('#Nombre').val(null);
-	$('#compania').val(null);
-	$('#pais').val(null);
-	$('#email').val(null);
 	$('#telefono').val(null);
 	$('#noMayorista').val(null);
 	$('#NombrePersona').val(null);
@@ -256,14 +253,33 @@ function verificaEstado() {
 	if(cotizacion == true){
 		cuentaActiva = 1;
 	}
-	factura = $('#archivo')[0].files[0];
+	var factura = $('#archivo')[0].files[0];
 	if ( Nombre != '' && compania != '' && pais != '' && email != '' && telefono != '' && cuentaActiva != null 
 		&& noMayorista != '' && NombrePersona != '' && emailContacto != '' && numFactura != '' && fecha != '' && monto != '') {
+		if (!validateEmail(email)){
+			toastr.remove()
+			msj('error', 'El formato de email ingresado es incorrecto');
+			$('#email').css('border-color','red');
+			return;
+		}else {
+			$('#email').css('border-color','#C6C9CA');
+		}
+		if (!validateEmail(emailContacto)){
+			toastr.remove()
+			msj('error', 'El formato del email del mayorista ingresado es incorrecto');
+			$('#emailContacto').css('border-color','red');
+			return;
+		}else {
+			$('#emailContacto').css('border-color','#C6C9CA');
+		}
+		if(factura == undefined) {
+			toastr.remove()
+			msj('error', 'Seleccione una factura');
+			return;
+		}
 		$('#ingresar').removeAttr('disabled');
-		console.log(1);
 	} else {
 		$('#ingresar').attr('disabled');
-		console.log(2);
 	}
 }
 
