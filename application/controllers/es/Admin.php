@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit ('No direct script access allowed');
 
-class Champion extends CI_Controller{
+class Admin extends CI_Controller{
 	
 	function __construct(){
 		parent::__construct();
@@ -63,7 +63,6 @@ class Champion extends CI_Controller{
                                <td>'.$key->pais.'</td>
                                <td></td>
                                <td>'.$key->fecha2.'</td>
-                               <td></td>
                                <td>'.RUTA_ARCHIVOS.$key->documento.'</td>
                              </tr>';
             }
@@ -71,7 +70,7 @@ class Champion extends CI_Controller{
             $data['bodyCotizaciones'] = $html2;
             $data['bodyReporte'] = $html3;
             $data['pais'] = $pais;
-            $this->load->view('en/v_champion', $data);
+            $this->load->view('es/v_champion', $data);
         }
 	}
 

@@ -37,7 +37,7 @@ function ingresar(){
                 if(data.rol == 1) {
                     location.href = 'Solicitud';
                 } else if(data.rol == 0) {
-                    location.href = 'Champion';
+                    location.href = 'Admin';
                 }
             }else {
                 if(data.pass == null || data.pass == '') {

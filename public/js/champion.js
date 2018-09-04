@@ -3,7 +3,7 @@ function getDetails(cotizacion) {
 	limpiarCampos();
 	$.ajax({
 		data  : { cotizacion : cotizacion },
-		url   : 'champion/getDetalles',
+		url   : 'Admin/getDetalles',
 		type : 'POST'
 	}).done(function(data){
 		try{
@@ -54,7 +54,7 @@ function openModal(){
 	limpiarCampos();
 	$.ajax({
 		data : { },
-		url  : 'champion/comboMayoristas',
+		url  : 'Admin/comboMayoristas',
 		type : 'POST'
 	}).done(function(data){
 		data = JSON.parse(data);
@@ -118,7 +118,7 @@ function openModalDocuemento (id) {
 	var ruta = '';
 	$.ajax({
 		data : { id : id},
-		url  : 'champion/muestraDocumento',
+		url  : 'Admin/muestraDocumento',
 		type : 'POST'
 	}).done(function(data){
 		data = JSON.parse(data);
@@ -138,7 +138,7 @@ function drawChartDonut() {
 	var importe = null;
 	$.ajax({
 		data : {},
-		url  : 'champion/getDatosGraficosCanales',
+		url  : 'Admin/getDatosGraficosCanales',
 		type : 'POST'
 	}).done(function(data) {
 		data = JSON.parse(data);
@@ -172,7 +172,7 @@ function drawChartDonut() {
 function drawChart() {
 	$.ajax({
 		data : { },
-		url  : 'champion/getDatosGraficoCotiza',
+		url  : 'Admin/getDatosGraficoCotiza',
 		type : 'POST'
 	}).done(function(data) {
 		data = JSON.parse(data);
