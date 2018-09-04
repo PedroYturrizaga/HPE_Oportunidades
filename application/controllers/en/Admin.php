@@ -62,7 +62,7 @@ class Admin extends CI_Controller{
                                <td>'.$key->compania.'</td>
                                <td>'.$key->no_mayorista.'</td>
                                <td>'.$key->no_contacto_mayo.'</td>
-                               <td>'.$key->email.'</td>
+                               <td>'.$key->email_contacto.'</td>
                                <td>'.$key->pais.'</td>
                                <td>'.(($key->puntos == 100) ? 'Storage' : 'Server').'</td>
                                <td>'.$key->fecha2.'</td>

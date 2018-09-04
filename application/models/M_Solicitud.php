@@ -91,6 +91,7 @@ class M_Solicitud extends CI_Model {
 		if($pais == '') {
 			$sql = "SELECT COUNT(compania) AS cantidad_compania,
 						   compania AS no_compania,
+						   no_mayorista,
 						   no_contacto_mayo,
 						   pais,
 						   SUM(monto_final) AS importe
@@ -185,6 +186,7 @@ class M_Solicitud extends CI_Model {
 		$sql = "SELECT id_cotizacion,
 					   Nombre AS user,
 					   email,
+					   email_contacto,
 				       no_contacto_mayo,
 				       no_mayorista,
 				       compania,
