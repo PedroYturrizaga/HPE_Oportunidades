@@ -48,11 +48,11 @@
         <div class="js-container">
             <div class="js-user m-t-30">
                 <div class="js-user--left">
-                    <p>Bienvenido(a) <?php echo $nombre?> </p> 
+                    <p>Welcome <?php echo $nombre?> </p> 
                 </div>
                 <?php if($pais != ''){ ?>
                 <div class="js-user--right">
-                    <button type="button" name="boton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModal();" >Nueva Oportunidad</button>
+                    <button type="button" name="boton" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" onclick="openModal();" >New oportunity</button>
                 </div>
                 <?php } ?>
             </div>
@@ -63,15 +63,15 @@
                 </div>
                 <div class="col-sm-8 col-xs-12">
                     <div class="js-table"> 
-                        <h2>Top 3 canales en importes facturados</h2>
+                        <h2>Top 3 channels amounts invoiced</h2>
                         <div class="table-responsive">
                             <table class="table" id="tableCanales">
                                 <thead>
                                     <tr>
-                                        <th>Nombre canal</th>
-                                        <th>Nombre vendedor</th>
-                                        <th>Pais</th>
-                                        <th class="text-right">Importe</th>
+                                        <th>Channel name</th>
+                                        <th>Seller name</th>
+                                        <th>Country</th>
+                                        <th class="text-right">Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody id="bodyCanales">
@@ -81,18 +81,18 @@
                         </div>
                     </div>
                     <div class="js-table">
-                        <h2>&Uacute;ltimos 10 registros </h2>
+                        <h2>Last 10 records </h2>
                         <div class="table-responsive">
                             <table class="table" id="tableCotizacion">
                                 <thead>
                                     <tr>
-                                        <th>Registrado por</th>
-                                        <th>Nombre vendedor</th>
-                                        <th>Nombre canal</th>
-                                        <th>Pais</th>
-                                        <th>Tipo venta</th>
-                                        <th>Fecha</th>
-                                        <th class="text-center">Ver m&aacute;s</th>
+                                        <th>Registered by</th>
+                                        <th>Seller name</th>
+                                        <th>Channel name</th>
+                                        <th>Country</th>
+                                        <th>Type of sale</th>
+                                        <th>Date</th>
+                                        <th class="text-center">Details</th>
                                     </tr>
                                 </thead>
                                 <tbody id="bodyUltimaCotizacion">
@@ -103,8 +103,8 @@
                     </div>
                     <div class="mdl-card">
                         <div class="mdl-card__actions">
-                            <h5>Reporte General de Registros</h5>
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-excel" id="excel1">Descargar Excel</button>
+                            <h5>General Records Report</h5>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-excel" id="excel1">Download Excel</button>
                         </div>
                     </div>
                     <div id="reporte" class="js-table" style="display:none">
@@ -113,15 +113,15 @@
                             <table class="table" id="tbReporte">
                                 <thead>
                                     <tr>
-                                        <th>Registrado por</th>
-                                        <th>Compa&ntilde;&iacute;a</th>
-                                        <th>Nombre canal</th>
-                                        <th>Nombre vendedor</th>
-                                        <th>Email vendedor</th>
-                                        <th>Pais</th>
-                                        <th>Tipo Documento</th>
-                                        <th>Fecha</th>
-                                        <th>Documento</th>
+                                        <th>Registered by</th>
+                                        <th>Company</th>
+                                        <th>Channel name</th>
+                                        <th>Seller name</th>
+                                        <th>E-mail seller</th>
+                                        <th>Country</th>
+                                        <th>Type of sale</th>
+                                        <th>Date</th>
+                                        <th>Document</th>
                                     </tr>
                                 </thead>
                                 <tbody id="bodyReporte">
@@ -234,13 +234,13 @@
             <div class="modal-content">
                 <div class="mdl-card">
                     <div class="mdl-card__title">
-                        <h2>Documento</h2>
+                        <h2>Document</h2>
                     </div>
                     <div class="mdl-card__supporting-text">
                         <object id="imgDocumento" data=""></object>
                     </div> 
                     <div class="mdl-card__actions">                         
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" data-dismiss="modal">Cerrar</button>
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect js-button" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
@@ -263,7 +263,7 @@
     <script src="<?php echo RUTA_PLUGINS?>toaster/toastr.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>Utils.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>jsmenu.js?v=<?php echo time();?>"></script>
-    <script src="<?php echo RUTA_JS?>champion.js?v=<?php echo time();?>"></script>
+    <script src="<?php echo RUTA_JS?>champion_en.js?v=<?php echo time();?>"></script>
     <script src="<?php echo RUTA_JS?>solicitud.js?v=<?php echo time();?>"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>

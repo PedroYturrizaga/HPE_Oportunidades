@@ -148,7 +148,7 @@ function drawChartDonut() {
 			var data = google.visualization.arrayToDataTable( arr );
 
 		    var options = {
-				title: 'Venta por paises',
+				title: 'Sale by countries',
 				pieHole: 0.6,
 				pieSliceTextStyle: {
 					color: 'black',
@@ -182,7 +182,7 @@ function drawChart() {
 			var data = google.visualization.arrayToDataTable( arr );
 
 	        var options = {
-	        	title: 'Puntaje entregado',
+	        	title: 'Given score',
 				pieHole: 0.6,
 				pieSliceTextStyle: {
 					color: 'black',
