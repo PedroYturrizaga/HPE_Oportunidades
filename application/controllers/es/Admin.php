@@ -40,10 +40,11 @@ class Admin extends CI_Controller{
             }
             foreach ($datos2 as $key) {
                 $html2 .= '<tr>
-                               <td>'.$key->compania.'</td>
+                               <td>'.$key->user.'</td>
                                <td>'.$key->no_contacto_mayo.'</td>
+                               <td>'.$key->no_mayorista.'</td>
                                <td>'.$key->pais.'</td>
-                               <td></td>
+                               <td>'.(($key->puntos == 100) ? 'Storage' : 'Server').'</td>
                                <td>'.$key->fecha.'</td>
                                <td class="text-center">
                                    <button class="mdl-button mdl-js-button mdl-button--icon" onclick="getDetails('.$key->id_cotizacion.');">
@@ -57,14 +58,16 @@ class Admin extends CI_Controller{
             }
             foreach ($datos3 as $key) {
                 $html3 .= '<tr>
+                               <td>'.$key->user.'</td>
                                <td>'.$key->compania.'</td>
+                               <td>'.$key->no_mayorista.'</td>
                                <td>'.$key->no_contacto_mayo.'</td>
                                <td>'.$key->email.'</td>
                                <td>'.$key->pais.'</td>
-                               <td></td>
+                               <td>'.(($key->puntos == 100) ? 'Storage' : 'Server').'</td>
                                <td>'.$key->fecha2.'</td>
                                <td>'.RUTA_ARCHIVOS.$key->documento.'</td>
-                             </tr>';
+                           </tr>';
             }
             $data['bodyCanales'] = $html;
             $data['bodyCotizaciones'] = $html2;

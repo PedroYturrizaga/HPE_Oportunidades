@@ -86,10 +86,11 @@
                             <table class="table" id="tableCotizacion">
                                 <thead>
                                     <tr>
-                                        <th>Nombre canal</th>
+                                        <th>Registrado por</th>
                                         <th>Nombre vendedor</th>
+                                        <th>Nombre canal</th>
                                         <th>Pais</th>
-                                        <th>Tipo Doc.</th>
+                                        <th>Tipo venta</th>
                                         <th>Fecha</th>
                                         <th class="text-center">Ver m&aacute;s</th>
                                     </tr>
@@ -112,6 +113,8 @@
                             <table class="table" id="tbReporte">
                                 <thead>
                                     <tr>
+                                        <th>Registrado por</th>
+                                        <th>Compa&ntilde;&iacute;a</th>
                                         <th>Nombre canal</th>
                                         <th>Nombre vendedor</th>
                                         <th>Email vendedor</th>

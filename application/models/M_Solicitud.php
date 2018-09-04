@@ -121,8 +121,11 @@ class M_Solicitud extends CI_Model {
 	function getLastCotizaciones($pais, $idUser) {
 		if($pais == '') {
 			$sql = "SELECT id_cotizacion,
+						   Nombre AS user,
 						   email,
 					       no_contacto_mayo,
+					       no_mayorista,
+					       puntos,
 					       compania,
 					       pais,
 					       date_format(fecha_factura, '%d/%m/%Y') AS fecha,
@@ -180,10 +183,13 @@ class M_Solicitud extends CI_Model {
 	}
 	function getDatosReporte(){
 		$sql = "SELECT id_cotizacion,
+					   Nombre AS user,
 					   email,
 				       no_contacto_mayo,
+				       no_mayorista,
 				       compania,
 				       pais,
+				       puntos,
 				       date_format(fecha_factura, '%d/%m/%Y') AS fecha,
 				       fecha_factura as fecha2,
 				       documento
